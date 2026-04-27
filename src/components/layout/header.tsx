@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import { Link as LocaleLink, usePathname } from "@/i18n/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { gsap, useGSAP } from "@/lib/motion";
@@ -81,7 +82,15 @@ export function Header() {
     });
   };
 
-  const alternateLocale = locale === "de" ? "en" : "de";
+  const alternateLocale = (locale === "de" ? "en" : "de") as "de" | "en";
+  const rawPathname = usePathname();
+  // Dynamic routes like /blog/[slug] are not switchable without param mapping;
+  // fall back to homepage for locale switch in those cases.
+  const staticPathnames = ["/", "/unternehmen", "/produkte", "/kompetenz", "/karriere", "/blog", "/kontakt", "/impressum", "/datenschutz"] as const;
+  type StaticPathname = typeof staticPathnames[number];
+  const switchHref = (staticPathnames as readonly string[]).includes(rawPathname)
+    ? (rawPathname as StaticPathname)
+    : ("/" as const);
 
   return (
     <header
@@ -120,15 +129,15 @@ export function Header() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-[var(--space-sm)] lg:flex">
           {/* Language Switch */}
-          <Link
-            href="/"
+          <LocaleLink
+            href={switchHref}
             locale={alternateLocale}
             className="flex items-center gap-1 text-[var(--text-sm)] text-gray-500 transition-colors hover:text-dark"
             aria-label={`Switch to ${t("langSwitch")}`}
           >
             <Globe className="h-4 w-4" />
             <span>{t("langSwitch")}</span>
-          </Link>
+          </LocaleLink>
 
           {/* CTA Button */}
           <Link
@@ -188,15 +197,15 @@ export function Header() {
                 {t("cta")}
               </Link>
 
-              <Link
-                href="/"
+              <LocaleLink
+                href={switchHref}
                 locale={alternateLocale}
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2 text-[var(--text-base)] text-gray-500"
               >
                 <Globe className="h-5 w-5" />
                 {t("langSwitch")}
-              </Link>
+              </LocaleLink>
             </div>
           </nav>
         </div>

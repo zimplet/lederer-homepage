@@ -1,16 +1,23 @@
-import { useTranslations } from "next-intl";
+import { HeroSection } from "@/components/sections/hero";
+import { StatsSection } from "@/components/sections/stats";
+import { AboutTeaserSection } from "@/components/sections/about-teaser";
+import { ProductsShowcaseSection } from "@/components/sections/products-showcase";
+import { CareerTeaserSection } from "@/components/sections/career-teaser";
+import { CertificatesMarqueeSection } from "@/components/sections/certificates-marquee";
+import { BlogTeaserSection } from "@/components/sections/blog-teaser";
+import { ContactCtaSection } from "@/components/sections/contact-cta";
 
-export default function Home() {
-  const t = useTranslations("Hero");
-
+export default function HomePage() {
   return (
     <main>
-      <section className="min-h-screen flex items-center justify-center">
-        <div className="container-fluid text-center">
-          <h1 className="mb-[var(--space-md)]">{t("title")}</h1>
-          <p className="mx-auto text-gray-500">{t("subtitle")}</p>
-        </div>
-      </section>
+      <HeroSection />
+      <StatsSection />
+      <AboutTeaserSection />
+      <ProductsShowcaseSection />
+      <CareerTeaserSection />
+      <CertificatesMarqueeSection />
+      <BlogTeaserSection />
+      <ContactCtaSection />
     </main>
   );
 }
