@@ -96,6 +96,63 @@
     "since": "Seit 1948",
     "copyright": "© {year} Jörg Lederer GmbH Amstetten"
   },
+  "Company": {
+    "tagline": "Seit 1948",
+    "heroTitle": "Drei Generationen. Eine Leidenschaft.",
+    "heroSubtitle": "Familiengeführt seit 1948 – mit Herzblut und Weitblick.",
+    "timelineTitle": "Unsere Geschichte",
+    "teamTitle": "Unsere Führung",
+    "teamTagline": "Das Team hinter Lederer",
+    "valuesTitle": "Unsere Werte",
+    "valuesTagline": "Was uns antreibt",
+    "sustainabilityTitle": "Nachhaltigkeit",
+    "sustainabilityTagline": "Verantwortung für morgen"
+  },
+  "ProductsPage": {
+    "heroTitle": "Elastische Garne in höchster Qualität",
+    "heroSubtitle": "Drei Produktlinien – maßgeschneidert für Ihre Anwendung",
+    "tagline": "Unsere Produkte",
+    "inquiryCta": "Individuelles Garn anfragen",
+    "wrappedTitle": "Umwundene Garne",
+    "airjetTitle": "Luftverwirbelte Garne",
+    "elastotwistTitle": "Elasto Twist"
+  },
+  "CareerPage": {
+    "heroTitle": "Deine Zukunft beginnt hier",
+    "heroSubtitle": "Werde Teil eines Teams, das Tradition und Innovation vereint",
+    "jobsTitle": "Offene Stellen",
+    "jobsSubtitle": "Wir suchen Verstärkung",
+    "noJobsText": "Aktuell keine freien Stellen – aber wir freuen uns jederzeit über Initiativbewerbungen.",
+    "processTitle": "Dein Weg zu uns",
+    "processTagline": "So einfach geht's",
+    "trainingTitle": "Ausbildung & Praktika",
+    "trainingTagline": "Für junge Menschen",
+    "applyNow": "Jetzt bewerben",
+    "initiativeApply": "Initiativbewerbung senden",
+    "step1": "Bewerbung einreichen",
+    "step1Desc": "Sende uns deine Unterlagen per E-Mail oder nutze unser Kontaktformular.",
+    "step2": "Erstes Gespräch",
+    "step2Desc": "Wir melden uns schnell und lernen uns in einem persönlichen Gespräch kennen.",
+    "step3": "Kennenlerntag",
+    "step3Desc": "Du erlebst unsere Produktion und unser Team hautnah.",
+    "step4": "Willkommen bei Lederer",
+    "step4Desc": "Du startest mit einem starken Team an deiner Seite."
+  },
+  "KontaktPage": {
+    "heroTitle": "Sprechen Sie uns an",
+    "heroSubtitle": "Wir sind für Sie da – persönlich, schnell und kompetent",
+    "formTitle": "Nachricht senden",
+    "teamTitle": "Ihre Ansprechpartner",
+    "locationTitle": "So finden Sie uns"
+  },
+  "Kompetenz": {
+    "tagline": "Technologie & Qualität",
+    "heroTitle": "Modernste Technologie. Höchste Qualität.",
+    "heroSubtitle": "Unser Maschinenpark und unsere Qualitätssicherung setzen Maßstäbe",
+    "machinesTitle": "Unser Maschinenpark",
+    "qualityTitle": "Qualitätssicherung",
+    "certTitle": "Zertifizierungen"
+  },
   "Cookie": {
     "title": "Cookie-Einstellungen",
     "description": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Einige sind notwendig, andere helfen uns, die Website zu verbessern.",

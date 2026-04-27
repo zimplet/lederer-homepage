@@ -96,6 +96,63 @@
     "since": "Since 1948",
     "copyright": "© {year} Jörg Lederer GmbH Amstetten"
   },
+  "Company": {
+    "tagline": "Since 1948",
+    "heroTitle": "Three Generations. One Passion.",
+    "heroSubtitle": "Family-run since 1948 – with heart and vision.",
+    "timelineTitle": "Our History",
+    "teamTitle": "Our Leadership",
+    "teamTagline": "The team behind Lederer",
+    "valuesTitle": "Our Values",
+    "valuesTagline": "What drives us",
+    "sustainabilityTitle": "Sustainability",
+    "sustainabilityTagline": "Responsibility for tomorrow"
+  },
+  "ProductsPage": {
+    "heroTitle": "Elastic Yarns of the Highest Quality",
+    "heroSubtitle": "Three product lines – tailored to your application",
+    "tagline": "Our Products",
+    "inquiryCta": "Request custom yarn",
+    "wrappedTitle": "Wrapped Yarns",
+    "airjetTitle": "Air-Jet Yarns",
+    "elastotwistTitle": "Elasto Twist"
+  },
+  "CareerPage": {
+    "heroTitle": "Your future starts here",
+    "heroSubtitle": "Join a team that combines tradition and innovation",
+    "jobsTitle": "Open Positions",
+    "jobsSubtitle": "We are looking for reinforcement",
+    "noJobsText": "No open positions currently – but we welcome speculative applications at any time.",
+    "processTitle": "Your path to us",
+    "processTagline": "It's that simple",
+    "trainingTitle": "Apprenticeships & Internships",
+    "trainingTagline": "For young people",
+    "applyNow": "Apply now",
+    "initiativeApply": "Send speculative application",
+    "step1": "Submit application",
+    "step1Desc": "Send us your documents by email or use our contact form.",
+    "step2": "First conversation",
+    "step2Desc": "We will get back to you quickly and get to know each other in a personal meeting.",
+    "step3": "Get-to-know day",
+    "step3Desc": "Experience our production and team first-hand.",
+    "step4": "Welcome to Lederer",
+    "step4Desc": "You start with a strong team at your side."
+  },
+  "KontaktPage": {
+    "heroTitle": "Get in touch",
+    "heroSubtitle": "We are here for you – personally, quickly and competently",
+    "formTitle": "Send a message",
+    "teamTitle": "Your contacts",
+    "locationTitle": "How to find us"
+  },
+  "Kompetenz": {
+    "tagline": "Technology & Quality",
+    "heroTitle": "State-of-the-art Technology. Highest Quality.",
+    "heroSubtitle": "Our machinery and quality assurance set standards",
+    "machinesTitle": "Our Machinery",
+    "qualityTitle": "Quality Assurance",
+    "certTitle": "Certifications"
+  },
   "Cookie": {
     "title": "Cookie Settings",
     "description": "We use cookies to provide the best possible experience. Some are necessary, others help us improve the website.",
