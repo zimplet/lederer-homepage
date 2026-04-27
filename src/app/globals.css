@@ -72,57 +72,58 @@
   --font-heading: var(--font-spline-sans), system-ui, sans-serif;
 }
 
-/* --- Base Styles --- */
-body {
-  background-color: var(--color-cream);
-  color: var(--color-dark);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* --- Base Styles (in @layer so Tailwind utilities can override) --- */
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--color-dark-deep);
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-dark-deep);
+  }
 
-h1 { font-size: var(--text-hero); }
-h2 { font-size: var(--text-4xl); }
-h3 { font-size: var(--text-3xl); }
-h4 { font-size: var(--text-2xl); }
-h5 { font-size: var(--text-xl); }
-h6 { font-size: var(--text-lg); }
+  h1 { font-size: var(--text-hero); }
+  h2 { font-size: var(--text-4xl); }
+  h3 { font-size: var(--text-3xl); }
+  h4 { font-size: var(--text-2xl); }
+  h5 { font-size: var(--text-xl); }
+  h6 { font-size: var(--text-lg); }
 
-p {
-  font-size: var(--text-base);
-  max-width: 72ch;
+  p {
+    font-size: var(--text-base);
+    max-width: 72ch;
+  }
+
+  ::selection {
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
+
+  html {
+    scroll-behavior: auto; /* GSAP ScrollSmoother handles this */
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-red);
+    outline-offset: 2px;
+  }
 }
 
 /* --- Fluid Container --- */
-.container-fluid {
-  width: min(100% - var(--container-padding) * 2, var(--container-max));
-  margin-inline: auto;
-}
-
-/* --- Selection --- */
-::selection {
-  background-color: var(--color-red);
-  color: var(--color-white);
-}
-
-/* --- Scroll Behavior --- */
-html {
-  scroll-behavior: auto; /* GSAP ScrollSmoother handles this */
-}
-
-/* --- Focus Styles (A11y) --- */
-:focus-visible {
-  outline: 2px solid var(--color-red);
-  outline-offset: 2px;
+@layer components {
+  .container-fluid {
+    width: min(100% - var(--container-padding) * 2, var(--container-max));
+    margin-inline: auto;
+  }
 }
 
 /* --- Reduced Motion --- */
@@ -136,72 +137,74 @@ html {
 }
 
 /* --- Blog Prose Styles --- */
-.prose-lederer {
-  max-width: 72ch;
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.8;
-  color: var(--color-dark);
-}
+@layer components {
+  .prose-lederer {
+    max-width: 72ch;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-dark);
+  }
 
-.prose-lederer p {
-  max-width: 72ch;
-  margin-bottom: 1.5em;
-}
+  .prose-lederer p {
+    max-width: 72ch;
+    margin-bottom: 1.5em;
+  }
 
-.prose-lederer h2 {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  color: var(--color-dark-deep);
-  margin-top: 2.5em;
-  margin-bottom: 0.75em;
-  line-height: 1.2;
-}
+  .prose-lederer h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-dark-deep);
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+  }
 
-.prose-lederer h3 {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-dark-deep);
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-}
+  .prose-lederer h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-dark-deep);
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
 
-.prose-lederer blockquote {
-  border-left: 2px solid var(--color-red);
-  padding-left: var(--space-md);
-  margin: 2em 0;
-  font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-style: italic;
-  color: var(--color-dark);
-}
+  .prose-lederer blockquote {
+    border-left: 2px solid var(--color-red);
+    padding-left: var(--space-md);
+    margin: 2em 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-dark);
+  }
 
-.prose-lederer ul {
-  list-style: none;
-  padding: 0;
-  margin: 1.5em 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
+  .prose-lederer ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
 
-.prose-lederer ul li {
-  padding-left: 1.5em;
-  position: relative;
-  font-size: var(--text-base);
-}
+  .prose-lederer ul li {
+    padding-left: 1.5em;
+    position: relative;
+    font-size: var(--text-base);
+  }
 
-.prose-lederer ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--color-red);
+  .prose-lederer ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-red);
+  }
 }
 
 /* --- Smooth Scrollbar Styling --- */
