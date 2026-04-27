@@ -34,8 +34,9 @@ export function HeroSection() {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: (self) =>
-            tl.from(
+          onSplit: (self) => {
+            gsap.set(self.elements, { visibility: "visible" });
+            return tl.from(
               self.lines,
               {
                 yPercent: 110,
@@ -44,13 +45,15 @@ export function HeroSection() {
                 ease: "entrance",
               },
               ">-1.0"
-            ),
+            );
+          },
         });
 
         // Layer 4: Subtitle words
         const subtitleSplit = SplitText.create(".hero-subtitle", {
           type: "words",
         });
+        gsap.set(".hero-subtitle", { visibility: "visible" });
 
         tl.from(
           subtitleSplit.words,

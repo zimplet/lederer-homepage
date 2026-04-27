@@ -27,13 +27,15 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: (self) =>
-            gsap.from(self.lines, {
+          onSplit: (self) => {
+            gsap.set(self.elements, { visibility: "visible" });
+            return gsap.from(self.lines, {
               yPercent: 110,
               duration: 1.1,
               stagger: 0.06,
               ease: "entrance",
-            }),
+            });
+          },
         });
 
         gsap.from(".post-meta", {

@@ -34,8 +34,9 @@ export function AboutTeaserSection() {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: (self) =>
-            gsap.from(self.lines, {
+          onSplit: (self) => {
+            gsap.set(self.elements, { visibility: "visible" });
+            return gsap.from(self.lines, {
               yPercent: 110,
               duration: 1.1,
               stagger: 0.08,
@@ -45,7 +46,8 @@ export function AboutTeaserSection() {
                 start: "top 80%",
                 once: true,
               },
-            }),
+            });
+          },
         });
 
         gsap.from(".about-body", {
