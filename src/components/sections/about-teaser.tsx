@@ -138,7 +138,7 @@ export function AboutTeaserSection() {
           <div className="relative overflow-hidden rounded-[var(--radius-xl)]">
             <div className="about-image relative aspect-[4/5] w-full">
               <Image
-                src="/images/2020-10-22_Joerg-Lederer-GmbH_TOBIAS-FROEHNER-PHOTOGRAPHY_0505_bearbeitet.jpg"
+                src="/images/Produktionshalle.jpg"
                 alt="Lederer Produktion - Garnmaschinen in Betrieb"
                 fill
                 className="object-cover"

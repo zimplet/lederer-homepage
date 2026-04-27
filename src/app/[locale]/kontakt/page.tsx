@@ -30,6 +30,7 @@ const TEAM = [
 
 export default function KontaktPage() {
   const t = useTranslations("Contact");
+  const tk = useTranslations("KontaktPage");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
@@ -96,12 +97,20 @@ export default function KontaktPage() {
 
   const onSubmit = async (data: FormValues) => {
     setSending(true);
-    // Simulated submission — replace with real API route in production
-    await new Promise((r) => setTimeout(r, 1200));
-    console.log("Form data:", data);
-    setSending(false);
-    setSubmitted(true);
-    reset();
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Network error");
+      setSubmitted(true);
+      reset();
+    } catch {
+      alert(t("error"));
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -122,10 +131,10 @@ export default function KontaktPage() {
             className="kontakt-headline max-w-[20ch] font-heading text-[var(--text-hero)] font-black leading-[0.95] tracking-[-0.03em] text-white"
             style={{ visibility: "hidden" }}
           >
-            {useTranslations("KontaktPage")("heroTitle")}
+            {tk("heroTitle")}
           </h1>
           <p className="mt-[var(--space-lg)] max-w-[45ch] font-body text-[var(--text-lg)] text-white/60">
-            {useTranslations("KontaktPage")("heroSubtitle")}
+            {tk("heroSubtitle")}
           </p>
         </div>
       </section>
@@ -138,7 +147,7 @@ export default function KontaktPage() {
             <div>
               <div className="section-reveal mb-[var(--space-lg)]" style={{ opacity: 0 }}>
                 <h2 className="font-heading text-[var(--text-3xl)] font-black tracking-tight text-dark-deep">
-                  {useTranslations("KontaktPage")("formTitle")}
+                  {tk("formTitle")}
                 </h2>
               </div>
 
@@ -350,7 +359,7 @@ export default function KontaktPage() {
         <div className="container-fluid">
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
-              {useTranslations("KontaktPage")("teamTitle")}
+              {tk("teamTitle")}
             </h2>
           </div>
           <div className="grid gap-[var(--space-md)] sm:grid-cols-2 lg:grid-cols-4">

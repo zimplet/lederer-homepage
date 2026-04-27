@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Heart,
@@ -228,11 +229,15 @@ export default function UnternehmenPage() {
           <div className="grid gap-[var(--space-lg)] lg:grid-cols-2">
             {/* Beatrice Lederer */}
             <div className="section-reveal group overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-sm" style={{ opacity: 0 }}>
-              <div className="relative h-72 overflow-hidden bg-gradient-to-br from-dark/10 to-dark/5">
-                <div className="absolute inset-0 flex items-center justify-center text-dark/20">
-                  <Users className="h-24 w-24" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/60 to-transparent" />
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src="/images/bernd-beatrice.jpg"
+                  alt="Beatrice Lederer und Bernd Grupp, Geschäftsführung Jörg Lederer GmbH"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
                   <div className="font-heading text-[var(--text-xl)] font-black text-white">Beatrice Lederer</div>
                   <div className="font-body text-[var(--text-sm)] text-white/70">Geschäftsführerin · 3. Generation</div>
@@ -249,11 +254,15 @@ export default function UnternehmenPage() {
 
             {/* Bernd Grupp */}
             <div className="section-reveal group overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-sm" style={{ opacity: 0 }}>
-              <div className="relative h-72 overflow-hidden bg-gradient-to-br from-red/10 to-red/5">
-                <div className="absolute inset-0 flex items-center justify-center text-red/20">
-                  <Users className="h-24 w-24" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/60 to-transparent" />
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src="/images/Fuehrungsebene-Lederer.jpg"
+                  alt="Führungsebene Jörg Lederer GmbH"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
                   <div className="font-heading text-[var(--text-xl)] font-black text-white">Bernd Grupp</div>
                   <div className="font-body text-[var(--text-sm)] text-white/70">Geschäftsführer</div>
