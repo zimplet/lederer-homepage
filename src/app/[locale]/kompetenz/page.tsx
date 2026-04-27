@@ -34,8 +34,8 @@ export default function KompetenzPage() {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: () =>
-            gsap.from(split.lines, {
+          onSplit: (self) =>
+            gsap.from(self.lines, {
               yPercent: 110,
               duration: 1.1,
               stagger: 0.08,

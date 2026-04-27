@@ -34,9 +34,9 @@ export function HeroSection() {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: () =>
+          onSplit: (self) =>
             tl.from(
-              headlineSplit.lines,
+              self.lines,
               {
                 yPercent: 110,
                 duration: 1.1,
@@ -161,35 +161,36 @@ export function HeroSection() {
 
       {/* Animated yarn lines */}
       <svg
+        viewBox="0 0 100 100"
         className="pointer-events-none absolute inset-0 h-full w-full"
         aria-hidden="true"
         preserveAspectRatio="none"
       >
         <path
           className="hero-yarn-1"
-          d="M 12% 0 C 11% 25%, 13% 50%, 12% 75%, 11.5% 100%"
+          d="M 12 0 C 10 25, 14 50, 12 75 C 11 88, 13 95, 12 100"
           stroke="rgba(231,49,55,0.25)"
-          strokeWidth="1.5"
+          strokeWidth="0.3"
           fill="none"
           strokeLinecap="round"
-          strokeDasharray="4 6"
+          strokeDasharray="1 1.5"
         />
         <path
           className="hero-yarn-2"
-          d="M 50% -5% C 51% 20%, 49% 45%, 50.5% 70%, 50% 105%"
+          d="M 50 -5 C 51 30, 49 65, 50 105"
           stroke="rgba(231,49,55,0.12)"
-          strokeWidth="1"
+          strokeWidth="0.2"
           fill="none"
           strokeLinecap="round"
         />
         <path
           className="hero-yarn-3"
-          d="M 88% 0 C 87% 30%, 89% 55%, 88% 80%, 87.5% 100%"
+          d="M 88 0 C 90 33, 86 67, 88 100"
           stroke="rgba(231,49,55,0.2)"
-          strokeWidth="1.5"
+          strokeWidth="0.3"
           fill="none"
           strokeLinecap="round"
-          strokeDasharray="2 8"
+          strokeDasharray="0.5 2"
         />
       </svg>
 

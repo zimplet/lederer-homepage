@@ -49,8 +49,8 @@ export function BlogPageContent({ featured, rest }: BlogPageContentProps) {
           type: "lines",
           mask: "lines",
           autoSplit: true,
-          onSplit: () =>
-            gsap.from(split.lines, {
+          onSplit: (self) =>
+            gsap.from(self.lines, {
               yPercent: 110,
               duration: 1.1,
               stagger: 0.08,
@@ -131,10 +131,10 @@ export function BlogPageContent({ featured, rest }: BlogPageContentProps) {
           >
             {/* Visual area */}
             <div className="relative flex h-72 flex-shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-red/15 via-red/5 to-cream lg:h-auto lg:w-5/12">
-              <svg className="absolute inset-0 h-full w-full opacity-20" aria-hidden="true" preserveAspectRatio="none">
-                <path d="M0,20% C20%,18% 40%,22% 60%,20% 80%,18% 100%,20%" stroke="#e73137" strokeWidth="1.5" fill="none" strokeDasharray="4 6" />
-                <path d="M0,50% C25%,48% 50%,52% 75%,50% 100%,48%" stroke="#e73137" strokeWidth="1" fill="none" />
-                <path d="M0,80% C15%,78% 35%,82% 55%,80% 75%,78% 100%,80%" stroke="#e73137" strokeWidth="1.5" fill="none" strokeDasharray="2 8" />
+              <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full opacity-20" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M0 20 C33 18, 67 22, 100 20" stroke="#e73137" strokeWidth="0.3" fill="none" strokeDasharray="1 1.5" />
+                <path d="M0 50 C33 48, 67 52, 100 50" stroke="#e73137" strokeWidth="0.2" fill="none" />
+                <path d="M0 80 C33 78, 67 82, 100 80" stroke="#e73137" strokeWidth="0.3" fill="none" strokeDasharray="0.5 2" />
               </svg>
               <div className="relative z-10 text-center">
                 <TagBadge tag={featured.tag} />
@@ -180,9 +180,9 @@ export function BlogPageContent({ featured, rest }: BlogPageContentProps) {
               >
                 {/* Card visual */}
                 <div className="relative h-44 overflow-hidden bg-gradient-to-br from-dark/8 to-cream-dark">
-                  <svg className="absolute inset-0 h-full w-full opacity-30" aria-hidden="true" preserveAspectRatio="none">
-                    <path d="M0,50% C25%,45% 75%,55% 100%,50%" stroke="#525149" strokeWidth="1" fill="none" strokeDasharray="3 5" />
-                    <path d="M0,70% C30%,65% 70%,75% 100%,70%" stroke="#525149" strokeWidth="1.5" fill="none" />
+                  <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full opacity-30" aria-hidden="true" preserveAspectRatio="none">
+                    <path d="M0 50 C25 45, 75 55, 100 50" stroke="#525149" strokeWidth="0.2" fill="none" strokeDasharray="0.7 1.2" />
+                    <path d="M0 70 C30 65, 70 75, 100 70" stroke="#525149" strokeWidth="0.3" fill="none" />
                   </svg>
                   <div className="absolute bottom-[var(--space-sm)] left-[var(--space-sm)]">
                     <TagBadge tag={post.tag} />

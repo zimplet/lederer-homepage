@@ -142,17 +142,18 @@ export function CareerTeaserSection() {
 
       {/* Yarn line accent */}
       <svg
+        viewBox="0 0 100 100"
         className="pointer-events-none absolute inset-0 h-full w-full"
         aria-hidden="true"
         preserveAspectRatio="none"
       >
         <path
-          d="M 8% 0 C 7% 30%, 9% 60%, 8% 100%"
+          d="M 8 0 C 6 33, 10 67, 8 100"
           stroke="rgba(231,49,55,0.15)"
-          strokeWidth="1.5"
+          strokeWidth="0.3"
           fill="none"
           strokeLinecap="round"
-          strokeDasharray="4 8"
+          strokeDasharray="1 2"
         />
       </svg>
 

@@ -52,39 +52,40 @@ export function YarnLines({
   return (
     <svg
       ref={svgRef}
+      viewBox="0 0 100 100"
       className={`pointer-events-none absolute inset-0 h-full w-full ${className}`}
       aria-hidden="true"
       preserveAspectRatio="none"
     >
       {/* Main vertical yarn - left third */}
       <path
-        d="M 15% 0 C 14% 20%, 16% 40%, 15% 60%, 14% 80%, 15.5% 100%"
+        d="M 15 0 C 13 25, 17 50, 15 75 C 14 88, 16 95, 15 100"
         stroke={color}
-        strokeWidth="1.5"
+        strokeWidth="0.3"
         fill="none"
         strokeLinecap="round"
       />
       {/* Secondary yarn - center */}
       <path
-        d="M 50% 0 C 51% 25%, 49% 50%, 50.5% 75%, 49.5% 100%"
+        d="M 50 0 C 51 33, 49 67, 50 100"
         stroke={color}
-        strokeWidth="1"
+        strokeWidth="0.2"
         fill="none"
         strokeLinecap="round"
       />
       {/* Accent yarn - right */}
       <path
-        d="M 82% 0 C 83% 30%, 81% 55%, 82.5% 80%, 82% 100%"
+        d="M 82 0 C 84 30, 80 65, 82 100"
         stroke={color}
-        strokeWidth="1.5"
+        strokeWidth="0.3"
         fill="none"
         strokeLinecap="round"
       />
       {/* Fine accent - far left */}
       <path
-        d="M 5% 20% C 5.5% 40%, 4.5% 60%, 5% 80%, 5.2% 100%"
+        d="M 5 0 C 5.5 33, 4.5 67, 5 100"
         stroke={color}
-        strokeWidth="0.75"
+        strokeWidth="0.15"
         fill="none"
         strokeLinecap="round"
       />
