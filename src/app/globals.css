@@ -7,22 +7,6 @@
    ============================================ */
 
 :root {
-  /* --- Brand Colors --- */
-  --color-red: #e73137;
-  --color-red-dark: #c4282d;
-  --color-red-light: #f5565b;
-  --color-dark: #525149;
-  --color-dark-deep: #3a3932;
-  --color-cream: #f5f3ef;
-  --color-cream-dark: #ebe8e2;
-  --color-white: #ffffff;
-  --color-gray-100: #f7f6f4;
-  --color-gray-200: #e8e6e1;
-  --color-gray-300: #d4d1ca;
-  --color-gray-400: #a8a49c;
-  --color-gray-500: #7c7870;
-  --color-gray-600: #5e5b54;
-
   /* --- Fluid Typography Scale --- */
   --text-xs: clamp(0.75rem, 0.714rem + 0.179vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.839rem + 0.179vw, 1rem);
@@ -66,20 +50,23 @@
 }
 
 /* --- Tailwind v4 Theme Integration --- */
+/* inline: utilities keep CSS vars at runtime (enables opacity modifiers) */
 @theme inline {
-  --color-red: var(--color-red);
-  --color-red-dark: var(--color-red-dark);
-  --color-red-light: var(--color-red-light);
-  --color-dark: var(--color-dark);
-  --color-dark-deep: var(--color-dark-deep);
-  --color-cream: var(--color-cream);
-  --color-cream-dark: var(--color-cream-dark);
-  --color-gray-100: var(--color-gray-100);
-  --color-gray-200: var(--color-gray-200);
-  --color-gray-300: var(--color-gray-300);
-  --color-gray-400: var(--color-gray-400);
-  --color-gray-500: var(--color-gray-500);
-  --color-gray-600: var(--color-gray-600);
+  /* Brand colors – direct values, NOT var() to avoid circular references */
+  --color-red: #e73137;
+  --color-red-dark: #c4282d;
+  --color-red-light: #f5565b;
+  --color-dark: #525149;
+  --color-dark-deep: #3a3932;
+  --color-cream: #f5f3ef;
+  --color-cream-dark: #ebe8e2;
+  --color-white: #ffffff;
+  --color-gray-100: #f7f6f4;
+  --color-gray-200: #e8e6e1;
+  --color-gray-300: #d4d1ca;
+  --color-gray-400: #a8a49c;
+  --color-gray-500: #7c7870;
+  --color-gray-600: #5e5b54;
 
   --font-body: var(--font-roboto), system-ui, sans-serif;
   --font-heading: var(--font-spline-sans), system-ui, sans-serif;

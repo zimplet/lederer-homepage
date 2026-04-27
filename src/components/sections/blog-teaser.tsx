@@ -127,7 +127,7 @@ export function BlogTeaserSection() {
             </p>
           </div>
           <Link
-            href="/news"
+            href="/blog"
             className="hidden items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red transition-all hover:gap-4 lg:flex"
           >
             {t("allPosts")} <ArrowRight className="h-5 w-5" />
@@ -136,7 +136,7 @@ export function BlogTeaserSection() {
 
         {/* Featured post */}
         <Link
-          href={`/news/${featured.slug}`}
+          href={`/blog/${featured.slug}`}
           className="blog-featured group mb-[var(--space-lg)] flex flex-col overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl lg:flex-row"
           style={{ opacity: 0 }}
         >
@@ -181,7 +181,7 @@ export function BlogTeaserSection() {
           {rest.map((post) => (
             <Link
               key={post.slug}
-              href={`/news/${post.slug}`}
+              href={`/blog/${post.slug}`}
               className="blog-card group overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl"
               style={{ opacity: 0 }}
             >
@@ -221,7 +221,7 @@ export function BlogTeaserSection() {
         {/* Mobile CTA */}
         <div className="mt-[var(--space-lg)] lg:hidden">
           <Link
-            href="/news"
+            href="/blog"
             className="inline-flex items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red"
           >
             {t("allPosts")} <ArrowRight className="h-5 w-5" />
