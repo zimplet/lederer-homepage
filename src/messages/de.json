@@ -1,0 +1,106 @@
+{
+  "Meta": {
+    "title": "Lederer Elastic-Garne | Tradition. Innovation. Qualität.",
+    "description": "Jörg Lederer GmbH – Seit 1948 Ihr Spezialist für elastische Garne. Hochwertige umwundene und luftverwirbelte Garne für Strumpfwaren, Kompressionsartikel und technische Textilien. Made in Germany."
+  },
+  "Nav": {
+    "company": "Unternehmen",
+    "products": "Produkte",
+    "expertise": "Kompetenz",
+    "careers": "Karriere",
+    "blog": "News",
+    "contact": "Kontakt",
+    "cta": "Anfrage senden",
+    "langSwitch": "English"
+  },
+  "Hero": {
+    "title": "Tradition. Innovation. Qualität.",
+    "subtitle": "Elastische Garne aus Leidenschaft — seit 1948",
+    "ctaProducts": "Produkte entdecken",
+    "ctaCareers": "Karriere bei Lederer",
+    "scrollDown": "Mehr entdecken"
+  },
+  "Stats": {
+    "experience": "Jahre Erfahrung",
+    "employees": "Mitarbeiter",
+    "spindles": "Spindeln",
+    "production": "m² Produktion",
+    "machines": "Umwinde-Maschinen"
+  },
+  "About": {
+    "tagline": "Textiler:innen aus Leidenschaft",
+    "title": "Tradition und Leidenschaft",
+    "description": "Unser mittelständisches Familienunternehmen mit Sitz in Amstetten verfügt über eine 75-jährige Erfahrung in der Herstellung von Garnen. Wir entwickeln und produzieren mit ca. 130 Mitarbeiterinnen und Mitarbeitern Produkte, die in hochwertigen Strümpfen und Strumpfhosen sowie in kompressiven Bandagen namhafter Hersteller verarbeitet sind.",
+    "cta": "Mehr erfahren"
+  },
+  "Products": {
+    "title": "Unsere Produkte",
+    "subtitle": "Eine beeindruckende Vielfalt an Garnen in höchster Qualität",
+    "wrapped": "Umwundene Garne",
+    "wrappedDesc": "Single und Double Cover – für Strumpfwaren, Kompression und technische Textilien",
+    "airjet": "Luftverwirbelte Garne",
+    "airjetDesc": "Wirtschaftliche Elastik-Garne durch innovative Air-Jet Technologie",
+    "elastotwist": "Elasto Twist",
+    "elastotwistDesc": "Moderne Hohlspindel-Zwirnmaschinen für Webgarne aus diversen Fasermaterialien",
+    "cta": "Alle Produkte ansehen"
+  },
+  "Careers": {
+    "tagline": "Karriere bei Lederer",
+    "title": "Werde Teil unserer Geschichte",
+    "subtitle": "Seit 1948 ein zuverlässiger und sicherer Arbeitgeber in der Textilindustrie",
+    "benefit1": "Sichere Arbeitsplätze",
+    "benefit1Desc": "Seit über 75 Jahren ein stabiler Arbeitgeber",
+    "benefit2": "Fitness-Zuschuss",
+    "benefit2Desc": "Vergünstigte Mitgliedschaft im Revitalzentrum",
+    "benefit3": "Weiterbildung",
+    "benefit3Desc": "Kontinuierliche Schulungen und Entwicklungsmöglichkeiten",
+    "benefit4": "Familiäres Umfeld",
+    "benefit4Desc": "Geringe Fluktuation und starker Zusammenhalt",
+    "benefit5": "Tradition & Innovation",
+    "benefit5Desc": "Modernste Technologie in einer traditionsreichen Branche",
+    "cta": "Offene Stellen ansehen",
+    "ctaApply": "Initiativbewerbung"
+  },
+  "Certificates": {
+    "title": "Zertifizierungen & Partner"
+  },
+  "Blog": {
+    "title": "Aktuelles",
+    "subtitle": "Neuigkeiten aus unserem Unternehmen",
+    "readMore": "Weiterlesen",
+    "allPosts": "Alle Beiträge"
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir sind für Sie da",
+    "hours": "Mo. – Fr.: 08:00 – 16:30 Uhr",
+    "name": "Name",
+    "company": "Firma",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "privacy": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "send": "Nachricht senden",
+    "success": "Vielen Dank! Ihre Nachricht wurde gesendet.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "Footer": {
+    "company": "Unternehmen",
+    "products": "Produkte",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "since": "Seit 1948",
+    "copyright": "© {year} Jörg Lederer GmbH Amstetten"
+  },
+  "Cookie": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Einige sind notwendig, andere helfen uns, die Website zu verbessern.",
+    "acceptAll": "Alle akzeptieren",
+    "acceptNecessary": "Nur notwendige",
+    "settings": "Einstellungen"
+  }
+}

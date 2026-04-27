@@ -1,0 +1,106 @@
+{
+  "Meta": {
+    "title": "Lederer Elastic Yarns | Tradition. Innovation. Quality.",
+    "description": "Jörg Lederer GmbH – Your specialist for elastic yarns since 1948. High-quality wrapped and air-jet yarns for hosiery, compression articles and technical textiles. Made in Germany."
+  },
+  "Nav": {
+    "company": "Company",
+    "products": "Products",
+    "expertise": "Expertise",
+    "careers": "Careers",
+    "blog": "News",
+    "contact": "Contact",
+    "cta": "Send inquiry",
+    "langSwitch": "Deutsch"
+  },
+  "Hero": {
+    "title": "Tradition. Innovation. Quality.",
+    "subtitle": "Elastic yarns with passion — since 1948",
+    "ctaProducts": "Discover products",
+    "ctaCareers": "Careers at Lederer",
+    "scrollDown": "Discover more"
+  },
+  "Stats": {
+    "experience": "Years of experience",
+    "employees": "Employees",
+    "spindles": "Spindles",
+    "production": "m² Production",
+    "machines": "Covering machines"
+  },
+  "About": {
+    "tagline": "Textile professionals with passion",
+    "title": "Tradition and passion",
+    "description": "Our medium-sized family business based in Amstetten has over 75 years of experience in yarn manufacturing. With approximately 130 employees, we develop and produce products used in high-quality stockings and tights as well as in compression bandages from renowned manufacturers.",
+    "cta": "Learn more"
+  },
+  "Products": {
+    "title": "Our Products",
+    "subtitle": "An impressive variety of yarns in the highest quality",
+    "wrapped": "Wrapped Yarns",
+    "wrappedDesc": "Single and double cover – for hosiery, compression and technical textiles",
+    "airjet": "Air-Jet Yarns",
+    "airjetDesc": "Economical elastic yarns through innovative air-jet technology",
+    "elastotwist": "Elasto Twist",
+    "elastotwistDesc": "Modern hollow spindle twisting machines for weaving yarns from diverse fiber materials",
+    "cta": "View all products"
+  },
+  "Careers": {
+    "tagline": "Careers at Lederer",
+    "title": "Become part of our story",
+    "subtitle": "A reliable and secure employer in the textile industry since 1948",
+    "benefit1": "Job Security",
+    "benefit1Desc": "A stable employer for over 75 years",
+    "benefit2": "Fitness Subsidy",
+    "benefit2Desc": "Discounted membership at the fitness center",
+    "benefit3": "Training",
+    "benefit3Desc": "Continuous education and development opportunities",
+    "benefit4": "Family Environment",
+    "benefit4Desc": "Low turnover and strong team cohesion",
+    "benefit5": "Tradition & Innovation",
+    "benefit5Desc": "State-of-the-art technology in a traditional industry",
+    "cta": "View open positions",
+    "ctaApply": "Speculative application"
+  },
+  "Certificates": {
+    "title": "Certifications & Partners"
+  },
+  "Blog": {
+    "title": "Latest News",
+    "subtitle": "News from our company",
+    "readMore": "Read more",
+    "allPosts": "All posts"
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "We are here for you",
+    "hours": "Mon – Fri: 8:00 AM – 4:30 PM",
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "privacy": "I have read the privacy policy and agree to the processing of my data.",
+    "send": "Send message",
+    "success": "Thank you! Your message has been sent.",
+    "error": "An error occurred. Please try again."
+  },
+  "Footer": {
+    "company": "Company",
+    "products": "Products",
+    "careers": "Careers",
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "since": "Since 1948",
+    "copyright": "© {year} Jörg Lederer GmbH Amstetten"
+  },
+  "Cookie": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to provide the best possible experience. Some are necessary, others help us improve the website.",
+    "acceptAll": "Accept all",
+    "acceptNecessary": "Necessary only",
+    "settings": "Settings"
+  }
+}
