@@ -1,27 +1,22 @@
 "use client";
 
-import { useRef, use } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 import { gsap, useGSAP, SplitText, ScrollTrigger } from "@/lib/motion";
-import { getPostBySlug, getRecentPosts, formatPostDate } from "@/lib/blog";
+import { formatPostDate, type BlogPostData } from "@/lib/blog-data";
+import { PortableText } from "@/components/sanity/portable-text";
 import { YarnLines } from "@/components/animations/yarn-lines";
 
-interface PageProps {
-  params: Promise<{ slug: string; locale: string }>;
+interface BlogPostContentProps {
+  post: BlogPostData;
+  related: BlogPostData[];
 }
 
-export function BlogPostContent({ params }: PageProps) {
-  const { slug } = use(params);
-  const post = getPostBySlug(slug);
-
-  if (!post) notFound();
-
+export function BlogPostContent({ post, related }: BlogPostContentProps) {
   const t = useTranslations("Blog");
   const pageRef = useRef<HTMLDivElement>(null);
-  const related = getRecentPosts(3, slug);
 
   useGSAP(
     () => {
@@ -135,20 +130,23 @@ export function BlogPostContent({ params }: PageProps) {
         <div className="container-fluid">
           <div className="lg:flex lg:gap-[var(--space-xl)]">
             {/* Main content */}
-            <article
-              className="post-body max-w-[75ch] flex-1"
-              style={{ opacity: 0 }}
-            >
+            <article className="post-body max-w-[75ch] flex-1" style={{ opacity: 0 }}>
               {/* Lead */}
               <p className="mb-[var(--space-lg)] font-body text-[var(--text-xl)] leading-relaxed text-gray-600">
                 {post.excerpt}
               </p>
 
-              {/* HTML content – replace with Portable Text renderer in Phase 5 */}
-              <div
-                className="prose-lederer"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              {/* Content: Portable Text (Sanity) or HTML (static fallback) */}
+              {post.contentBlocks ? (
+                <div className="prose-lederer">
+                  <PortableText value={post.contentBlocks} />
+                </div>
+              ) : post.contentHtml ? (
+                <div
+                  className="prose-lederer"
+                  dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                />
+              ) : null}
 
               {/* CTA */}
               <div className="mt-[var(--space-xl)] border-t border-gray-200 pt-[var(--space-lg)]">
