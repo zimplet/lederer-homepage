@@ -3,188 +3,249 @@
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { ArrowRight, Layers, Wind, Repeat2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { gsap, useGSAP, ScrollTrigger } from "@/lib/motion";
-
-const PRODUCTS = [
-  {
-    key: "wrapped" as const,
-    icon: Layers,
-    color: "from-red/20 to-red/5",
-    tag: "Umwundene Garne",
-  },
-  {
-    key: "airjet" as const,
-    icon: Wind,
-    color: "from-dark/20 to-dark/5",
-    tag: "Luftverwirbelte Garne",
-  },
-  {
-    key: "elastotwist" as const,
-    icon: Repeat2,
-    color: "from-gray-400/20 to-gray-400/5",
-    tag: "Elasto Twist",
-  },
-] as const;
 
 export function ProductsShowcaseSection() {
   const t = useTranslations("Products");
   const containerRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
-        const track = trackRef.current!;
-        const totalWidth = track.scrollWidth - window.innerWidth;
-
-        const scrollTween = gsap.to(track, {
-          x: -totalWidth,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: () => `+=${totalWidth}`,
-            pin: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-        });
-
-        // Animate cards on enter in horizontal scroll context
-        gsap.utils.toArray<HTMLElement>(".product-card").forEach((card) => {
-          gsap.from(card, {
-            opacity: 0,
-            y: 40,
-            filter: "blur(8px)",
-            duration: 0.8,
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Section header
+        gsap.fromTo(
+          ".products-header",
+          { opacity: 0, y: 30, filter: "blur(6px)" },
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.9,
             ease: "entrance",
             scrollTrigger: {
-              trigger: card,
-              containerAnimation: scrollTween,
-              start: "left 80%",
-              end: "left 40%",
-              scrub: false,
+              trigger: containerRef.current,
+              start: "top 82%",
               once: true,
             },
-          });
-        });
-      });
+          }
+        );
 
-      // Mobile: simple vertical stagger
-      mm.add("(max-width: 1023px) and (prefers-reduced-motion: no-preference)", () => {
-        ScrollTrigger.batch(".product-card", {
+        // Image Scale & Fade paradigm — images start small, grow on scroll in
+        gsap.utils.toArray<HTMLElement>(".product-img").forEach((img) => {
+          gsap.fromTo(
+            img,
+            { scale: 0.88, filter: "brightness(0.65)" },
+            {
+              scale: 1,
+              filter: "brightness(1)",
+              ease: "none",
+              scrollTrigger: {
+                trigger: img,
+                start: "top 85%",
+                end: "top 20%",
+                scrub: 1.2,
+              },
+            }
+          );
+        });
+
+        // Bento cards stagger
+        ScrollTrigger.batch(".bento-card", {
           onEnter: (elements) =>
-            gsap.from(elements, {
-              opacity: 0,
-              y: 50,
-              filter: "blur(8px)",
-              duration: 0.8,
-              ease: "entrance",
-              stagger: 0.15,
-            }),
+            gsap.fromTo(
+              elements,
+              { opacity: 0, y: 40, filter: "blur(8px)" },
+              {
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+                duration: 0.9,
+                ease: "entrance",
+                stagger: 0.12,
+              }
+            ),
           start: "top 85%",
           once: true,
         });
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".product-card", { opacity: 1 });
+        gsap.set(".bento-card", { opacity: 1 });
       });
     },
     { scope: containerRef }
   );
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden bg-cream-dark">
-      {/* Section header - outside scroll track */}
-      <div className="container-fluid pt-[var(--space-section)] pb-[var(--space-xl)]">
-        <div className="flex items-end justify-between">
+    <div
+      ref={containerRef}
+      className="relative overflow-hidden bg-dark-deep py-[var(--space-section)]"
+    >
+      {/* Ambient glow */}
+      <div
+        className="pointer-events-none absolute left-[20%] top-[30%] h-[40%] w-[30%] rounded-full bg-red/6 blur-[120px]"
+        aria-hidden="true"
+      />
+
+      <div className="container-fluid relative z-10">
+        {/* Header */}
+        <div className="products-header mb-[var(--space-2xl)] flex items-end justify-between" style={{ opacity: 0 }}>
           <div>
-            <div className="mb-[var(--space-sm)] flex items-center gap-3">
-              <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
-                Produkte
-              </span>
-            </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-[-0.03em] text-white">
               {t("title")}
             </h2>
-            <p className="mt-[var(--space-sm)] font-body text-[var(--text-lg)] text-gray-500">
+            <p className="mt-[var(--space-sm)] max-w-[48ch] font-body text-[var(--text-lg)] text-white/50">
               {t("subtitle")}
             </p>
           </div>
           <Link
             href="/produkte"
-            className="hidden items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red transition-all hover:gap-4 lg:flex"
+            className="hidden items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red transition-all duration-300 hover:gap-4 lg:flex"
           >
             {t("cta")} <ArrowRight className="h-5 w-5" />
           </Link>
         </div>
-      </div>
 
-      {/* Horizontal scroll track (desktop) / vertical stack (mobile) */}
-      <div
-        ref={trackRef}
-        className="flex gap-[var(--space-md)] px-[var(--space-md)] pb-[var(--space-section)] lg:w-max lg:flex-row"
-      >
-        {PRODUCTS.map(({ key, icon: Icon, color, tag }) => (
+        {/*
+          Bento Grid — Mathematically verified:
+          12 columns total
+          Card A: col-span-7 row-span-2 → occupies cols 1-7, rows 1-2
+          Card B: col-span-5 row-span-1 → occupies cols 8-12, row 1
+          Card C: col-span-5 row-span-1 → occupies cols 8-12, row 2
+          Row 1: 7+5=12 ✓  Row 2: 7(A cont)+5(C)=12 ✓  Zero gaps ✓
+        */}
+        <div className="grid auto-rows-[minmax(200px,auto)] grid-flow-dense grid-cols-1 gap-[var(--space-sm)] lg:grid-cols-12">
+          {/* Card A: Umwundene Garne — large, spans 2 rows */}
           <article
-            key={key}
-            className="product-card group relative w-[min(85vw,400px)] flex-shrink-0 overflow-hidden rounded-[var(--radius-xl)] bg-white p-[var(--space-lg)] shadow-sm transition-shadow duration-300 hover:shadow-xl lg:w-[420px]"
-            style={{ opacity: 0 }}
+            className="bento-card group relative col-span-1 overflow-hidden rounded-[var(--radius-xl)] lg:col-span-7 lg:row-span-2"
+            style={{ minHeight: "clamp(320px,45vw,560px)", opacity: 0 }}
           >
-            {/* Background gradient */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
-              aria-hidden="true"
-            />
+            {/* Image */}
+            <div className="product-img absolute inset-0">
+              <Image
+                src="/images/Spulen-rot.jpg"
+                alt="Umwundene Elastikgarne auf Spulen"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+            </div>
+            {/* Gradients */}
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/90 via-dark-deep/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-br from-red/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-            {/* Icon */}
-            <div className="relative mb-[var(--space-lg)] flex h-14 w-14 items-center justify-center rounded-[var(--radius-md)] bg-red/10">
-              <Icon className="h-6 w-6 text-red" />
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 right-0 p-[var(--space-lg)]">
+              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-red/80">
+                Umwundene Garne
+              </span>
+              <h3 className="mt-2 font-heading text-[var(--text-3xl)] font-black leading-tight text-white">
+                {t("wrapped")}
+              </h3>
+              <p className="mt-[var(--space-sm)] max-w-[40ch] font-body text-[var(--text-base)] leading-relaxed text-white/65">
+                {t("wrappedDesc")}
+              </p>
+              <div className="mt-[var(--space-md)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/70 transition-all duration-300 group-hover:gap-4 group-hover:text-white">
+                Mehr erfahren <ArrowRight className="h-4 w-4" />
+              </div>
             </div>
 
-            {/* Tag */}
-            <span className="relative font-body text-[var(--text-xs)] uppercase tracking-[0.2em] text-red">
-              {tag}
-            </span>
-
-            {/* Title */}
-            <h3 className="relative mt-2 font-heading text-[var(--text-2xl)] font-bold leading-tight text-dark-deep">
-              {t(key)}
-            </h3>
-
-            {/* Description */}
-            <p className="relative mt-[var(--space-sm)] font-body text-[var(--text-base)] leading-relaxed text-gray-500">
-              {t(`${key}Desc`)}
-            </p>
-
-            {/* Yarn line decoration */}
+            {/* Bottom red line */}
             <div
-              className="absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-red to-red/0 transition-transform duration-500 group-hover:scale-x-100"
+              className="absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-red to-red/0 transition-transform duration-600 group-hover:scale-x-100"
               aria-hidden="true"
             />
-
-            {/* Link arrow */}
-            <div className="relative mt-[var(--space-xl)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
-              Mehr erfahren <ArrowRight className="h-4 w-4" />
-            </div>
           </article>
-        ))}
-      </div>
 
-      {/* Mobile CTA */}
-      <div className="container-fluid pb-[var(--space-section)] pt-0 lg:hidden">
-        <Link
-          href="/produkte"
-          className="inline-flex items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red"
-        >
-          {t("cta")} <ArrowRight className="h-5 w-5" />
-        </Link>
+          {/* Card B: Luftverwirbelte Garne */}
+          <article
+            className="bento-card group relative col-span-1 overflow-hidden rounded-[var(--radius-xl)] lg:col-span-5"
+            style={{ minHeight: "clamp(200px,22vw,280px)", opacity: 0 }}
+          >
+            <div className="product-img absolute inset-0">
+              <Image
+                src="/images/Produktion.jpg"
+                alt="Luftverwirbelte Garnproduktion"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/88 via-dark-deep/40 to-transparent" />
+            <div className="absolute inset-0 bg-dark-deep/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-[var(--space-md)]">
+              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-white/45">
+                Luftverwirbelte Garne
+              </span>
+              <h3 className="mt-1 font-heading text-[var(--text-xl)] font-bold leading-tight text-white">
+                {t("airjet")}
+              </h3>
+              <p className="mt-[var(--space-xs)] font-body text-[var(--text-sm)] leading-relaxed text-white/60">
+                {t("airjetDesc")}
+              </p>
+              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+                Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
+              </div>
+            </div>
+            <div
+              className="absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-white/30 to-transparent transition-transform duration-600 group-hover:scale-x-100"
+              aria-hidden="true"
+            />
+          </article>
+
+          {/* Card C: Elasto Twist */}
+          <article
+            className="bento-card group relative col-span-1 overflow-hidden rounded-[var(--radius-xl)] lg:col-span-5"
+            style={{ minHeight: "clamp(200px,22vw,280px)", opacity: 0 }}
+          >
+            <div className="product-img absolute inset-0">
+              <Image
+                src="/images/2020-10-22_Joerg-Lederer-GmbH_TOBIAS-FROEHNER-PHOTOGRAPHY_0505_bearbeitet.jpg"
+                alt="Elasto Twist Hohlspindel-Technik"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/90 via-dark-deep/45 to-transparent" />
+            {/* Red tint on hover */}
+            <div className="absolute inset-0 bg-red/12 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-[var(--space-md)]">
+              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-red/70">
+                Elasto Twist
+              </span>
+              <h3 className="mt-1 font-heading text-[var(--text-xl)] font-bold leading-tight text-white">
+                {t("elastotwist")}
+              </h3>
+              <p className="mt-[var(--space-xs)] font-body text-[var(--text-sm)] leading-relaxed text-white/60">
+                {t("elastotwistDesc")}
+              </p>
+              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+                Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
+              </div>
+            </div>
+            <div
+              className="absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-red to-red/0 transition-transform duration-600 group-hover:scale-x-100"
+              aria-hidden="true"
+            />
+          </article>
+        </div>
+
+        {/* Mobile CTA */}
+        <div className="mt-[var(--space-xl)] lg:hidden">
+          <Link
+            href="/produkte"
+            className="inline-flex items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red"
+          >
+            {t("cta")} <ArrowRight className="h-5 w-5" />
+          </Link>
+        </div>
       </div>
     </div>
   );

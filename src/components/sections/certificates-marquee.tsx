@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/motion";
 
 const CERTIFICATES = [
@@ -13,11 +12,9 @@ const CERTIFICATES = [
   { name: "Made in Germany", subtitle: "Qualität aus Baden-Württemberg" },
 ] as const;
 
-// Duplicate for seamless loop
 const ITEMS = [...CERTIFICATES, ...CERTIFICATES];
 
 export function CertificatesMarqueeSection() {
-  const t = useTranslations("Certificates");
   const containerRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -29,11 +26,10 @@ export function CertificatesMarqueeSection() {
         const track = trackRef.current!;
         const singleSetWidth = track.scrollWidth / 2;
 
-        // Infinite marquee
         gsap.to(track, {
           x: -singleSetWidth,
           ease: "none",
-          duration: 28,
+          duration: 32,
           repeat: -1,
           modifiers: {
             x: (x) => {
@@ -43,21 +39,20 @@ export function CertificatesMarqueeSection() {
           },
         });
 
-        // Section fade-in
-        gsap.from(containerRef.current, {
-          opacity: 0,
-          duration: 0.8,
-          ease: "entrance",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 90%",
-            once: true,
-          },
-        });
-      });
-
-      mm.add("(prefers-reduced-motion: reduce)", () => {
-        // Static display, no animation
+        gsap.fromTo(
+          containerRef.current,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.8,
+            ease: "entrance",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
       });
     },
     { scope: containerRef }
@@ -66,25 +61,15 @@ export function CertificatesMarqueeSection() {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden bg-cream-dark py-[var(--space-xl)]"
+      className="relative overflow-hidden bg-cream py-[var(--space-xl)]"
     >
-      {/* Section label */}
-      <div className="container-fluid mb-[var(--space-lg)]">
-        <div className="flex items-center gap-3">
-          <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-          <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
-            {t("title")}
-          </span>
-        </div>
-      </div>
-
       {/* Fade edges */}
       <div
-        className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[var(--space-xl)] bg-gradient-to-r from-cream-dark to-transparent"
+        className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[clamp(3rem,8vw,8rem)] bg-gradient-to-r from-cream to-transparent"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[var(--space-xl)] bg-gradient-to-l from-cream-dark to-transparent"
+        className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[clamp(3rem,8vw,8rem)] bg-gradient-to-l from-cream to-transparent"
         aria-hidden="true"
       />
 
@@ -92,22 +77,20 @@ export function CertificatesMarqueeSection() {
       <div className="overflow-hidden">
         <div
           ref={trackRef}
-          className="flex w-max gap-[var(--space-md)]"
-          aria-label={t("title")}
+          className="flex w-max gap-[var(--space-sm)]"
         >
           {ITEMS.map((cert, i) => (
             <div
               key={`${cert.name}-${i}`}
-              className="flex flex-shrink-0 items-center gap-[var(--space-sm)] rounded-[var(--radius-md)] border border-dark/10 bg-white px-[var(--space-md)] py-[var(--space-sm)] shadow-sm"
+              className="flex flex-shrink-0 items-center gap-[var(--space-sm)] rounded-full border border-dark/8 bg-white px-[var(--space-md)] py-[var(--space-sm)] shadow-[0_1px_6px_rgba(0,0,0,0.04)]"
               aria-hidden={i >= CERTIFICATES.length}
             >
-              {/* Yarn dot accent */}
-              <div className="h-2 w-2 flex-shrink-0 rounded-full bg-red" aria-hidden="true" />
+              <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" aria-hidden="true" />
               <div>
-                <div className="font-heading text-[var(--text-base)] font-bold text-dark-deep">
+                <div className="font-heading text-[var(--text-sm)] font-bold text-dark-deep">
                   {cert.name}
                 </div>
-                <div className="font-body text-[var(--text-xs)] text-gray-400">
+                <div className="font-body text-[var(--text-xs)] text-dark/40">
                   {cert.subtitle}
                 </div>
               </div>

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Link as LocaleLink, usePathname } from "@/i18n/navigation";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { gsap, useGSAP } from "@/lib/motion";
 
@@ -22,40 +22,23 @@ export function Header() {
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const pillRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
 
-  // Scroll progress bar + header background on scroll
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Scroll progress bar
-        gsap.to(progressRef.current, {
-          scaleX: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: document.documentElement,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.3,
-          },
-        });
+        gsap.fromTo(
+          pillRef.current,
+          { y: -72, opacity: 0, scale: 0.96 },
+          { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: "entrance", delay: 0.4 }
+        );
+      });
 
-        // Header background on scroll
-        gsap.to(headerRef.current, {
-          backgroundColor: "rgba(245, 243, 239, 0.95)",
-          backdropFilter: "blur(12px)",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-          duration: 0.3,
-          ease: "smooth",
-          scrollTrigger: {
-            trigger: document.documentElement,
-            start: "80px top",
-            toggleActions: "play none none reverse",
-          },
-        });
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set(pillRef.current, { opacity: 1 });
       });
     },
     { scope: headerRef }
@@ -73,8 +56,8 @@ export function Header() {
             y: 0,
             duration: 0.5,
             ease: "entrance",
-            stagger: 0.06,
-            delay: 0.15,
+            stagger: 0.07,
+            delay: 0.1,
           }
         );
       }
@@ -84,10 +67,18 @@ export function Header() {
 
   const alternateLocale = (locale === "de" ? "en" : "de") as "de" | "en";
   const rawPathname = usePathname();
-  // Dynamic routes like /blog/[slug] are not switchable without param mapping;
-  // fall back to homepage for locale switch in those cases.
-  const staticPathnames = ["/", "/unternehmen", "/produkte", "/kompetenz", "/karriere", "/blog", "/kontakt", "/impressum", "/datenschutz"] as const;
-  type StaticPathname = typeof staticPathnames[number];
+  const staticPathnames = [
+    "/",
+    "/unternehmen",
+    "/produkte",
+    "/kompetenz",
+    "/karriere",
+    "/blog",
+    "/kontakt",
+    "/impressum",
+    "/datenschutz",
+  ] as const;
+  type StaticPathname = (typeof staticPathnames)[number];
   const switchHref = (staticPathnames as readonly string[]).includes(rawPathname)
     ? (rawPathname as StaticPathname)
     : ("/" as const);
@@ -95,19 +86,17 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 transition-colors"
+      className="pointer-events-none fixed left-0 right-0 top-0 z-50 flex justify-center px-[var(--space-md)] pt-[var(--space-sm)]"
     >
-      {/* Scroll progress bar */}
+      {/* Floating pill */}
       <div
-        ref={progressRef}
-        className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-red"
-        aria-hidden="true"
-      />
-
-      <div className="container-fluid flex items-center justify-between py-[var(--space-sm)]">
+        ref={pillRef}
+        className="pointer-events-auto flex w-full max-w-5xl items-center justify-between rounded-full border border-white/10 bg-dark-deep/88 px-[var(--space-md)] py-3 shadow-[0_8px_40px_-4px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-xl"
+        style={{ opacity: 0 }}
+      >
         {/* Logo */}
-        <Link href="/" aria-label="Lederer Elastic-Garne - Startseite">
-          <Logo className="w-[clamp(120px,10vw,200px)]" />
+        <Link href="/" aria-label="Jörg Lederer GmbH – Startseite">
+          <Logo className="w-[clamp(100px,8vw,148px)] brightness-0 invert" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -119,55 +108,52 @@ export function Header() {
             <Link
               key={key}
               href={href}
-              className="font-heading text-[var(--text-sm)] font-medium text-dark transition-colors duration-200 hover:text-red"
+              className="font-heading text-[var(--text-sm)] font-medium text-white/50 transition-colors duration-200 hover:text-white"
             >
               {t(key)}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop Actions */}
-        <div className="hidden items-center gap-[var(--space-sm)] lg:flex">
-          {/* Language Switch */}
+        {/* Right side */}
+        <div className="flex items-center gap-[var(--space-sm)]">
           <LocaleLink
             href={switchHref}
             locale={alternateLocale}
-            className="flex items-center gap-1 text-[var(--text-sm)] text-gray-500 transition-colors hover:text-dark"
+            className="hidden font-body text-[var(--text-xs)] text-white/30 transition-colors hover:text-white/60 lg:block"
             aria-label={`Switch to ${t("langSwitch")}`}
           >
-            <Globe className="h-4 w-4" />
-            <span>{t("langSwitch")}</span>
+            {t("langSwitch")}
           </LocaleLink>
 
-          {/* CTA Button */}
           <Link
             href="/kontakt"
-            className="inline-flex items-center rounded-full bg-red px-[var(--space-md)] py-[var(--space-xs)] font-heading text-[var(--text-sm)] font-semibold text-white transition-all duration-200 hover:bg-red-dark hover:scale-[1.02]"
+            className="hidden rounded-full bg-red px-[var(--space-md)] py-[0.4rem] font-heading text-[var(--text-xs)] font-bold text-white transition-all duration-200 hover:bg-red-dark hover:scale-[1.03] lg:inline-flex"
           >
             {t("cta")}
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobile}
-          className="relative z-50 flex h-10 w-10 items-center justify-center lg:hidden"
-          aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
-          aria-expanded={mobileOpen}
-        >
-          {mobileOpen ? (
-            <X className="h-6 w-6 text-dark" />
-          ) : (
-            <Menu className="h-6 w-6 text-dark" />
-          )}
-        </button>
+          {/* Mobile burger */}
+          <button
+            onClick={toggleMobile}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+            aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? (
+              <X className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
+            )}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile full-screen overlay */}
       {mobileOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-cream/98 backdrop-blur-md lg:hidden"
+          className="pointer-events-auto fixed inset-0 z-40 flex flex-col items-center justify-center bg-dark-deep/97 backdrop-blur-xl lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
@@ -179,7 +165,7 @@ export function Header() {
                 href={href}
                 data-mobile-link
                 onClick={() => setMobileOpen(false)}
-                className="font-heading text-[var(--text-2xl)] font-bold text-dark transition-colors hover:text-red"
+                className="font-heading text-[var(--text-2xl)] font-bold text-white/75 transition-colors hover:text-white"
               >
                 {t(key)}
               </Link>
@@ -192,7 +178,7 @@ export function Header() {
               <Link
                 href="/kontakt"
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-lg)] font-semibold text-white"
+                className="rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-lg)] font-bold text-white"
               >
                 {t("cta")}
               </Link>
@@ -201,9 +187,8 @@ export function Header() {
                 href={switchHref}
                 locale={alternateLocale}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 text-[var(--text-base)] text-gray-500"
+                className="font-body text-[var(--text-sm)] text-white/35"
               >
-                <Globe className="h-5 w-5" />
                 {t("langSwitch")}
               </LocaleLink>
             </div>
