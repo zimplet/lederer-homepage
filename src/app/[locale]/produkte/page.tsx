@@ -95,25 +95,33 @@ export default function ProduktePage() {
         });
 
         gsap.utils.toArray<HTMLElement>(".section-reveal").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0,
-            y: 30,
-            filter: "blur(6px)",
-            duration: 0.8,
-            ease: "entrance",
-            scrollTrigger: { trigger: el, start: "top 85%", once: true },
-          });
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 30, filter: "blur(6px)" },
+            {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              duration: 0.8,
+              ease: "entrance",
+              scrollTrigger: { trigger: el, start: "top 85%", once: true },
+            }
+          );
         });
 
         ScrollTrigger.batch(".spec-item", {
           onEnter: (els) =>
-            gsap.from(els, {
-              opacity: 0,
-              x: -20,
-              duration: 0.5,
-              stagger: 0.06,
-              ease: "entrance",
-            }),
+            gsap.fromTo(
+              els,
+              { opacity: 0, x: -20 },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.5,
+                stagger: 0.06,
+                ease: "entrance",
+              }
+            ),
           start: "top 90%",
           once: true,
         });
@@ -122,7 +130,7 @@ export default function ProduktePage() {
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".products-headline, .section-reveal, .spec-item", { opacity: 1 });
+        gsap.set(".products-headline, .section-reveal, .spec-item", { opacity: 1, visibility: "visible" });
       });
     },
     { scope: pageRef }

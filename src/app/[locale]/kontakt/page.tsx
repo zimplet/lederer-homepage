@@ -66,35 +66,57 @@ export default function KontaktPage() {
         });
 
         gsap.utils.toArray<HTMLElement>(".section-reveal").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0,
-            y: 30,
-            filter: "blur(6px)",
-            duration: 0.8,
-            ease: "entrance",
-            scrollTrigger: { trigger: el, start: "top 85%", once: true },
-          });
-        });
-
-        gsap.utils.toArray<HTMLElement>(".form-field").forEach((el, i) => {
-          gsap.from(el, {
-            opacity: 0,
-            y: 20,
-            duration: 0.5,
-            ease: "entrance",
-            delay: i * 0.06,
-            scrollTrigger: { trigger: formRef.current, start: "top 80%", once: true },
-          });
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 30, filter: "blur(6px)" },
+            {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              duration: 0.8,
+              ease: "entrance",
+              scrollTrigger: { trigger: el, start: "top 85%", once: true },
+            }
+          );
         });
 
         return () => split.revert();
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".kontakt-headline, .section-reveal, .form-field", { opacity: 1 });
+        gsap.set(".kontakt-headline, .section-reveal", { opacity: 1, visibility: "visible" });
       });
     },
     { scope: pageRef }
+  );
+
+  // The form unmounts on success and remounts (with opacity: 0) on reset, so it
+  // animates in again whenever `submitted` flips back to false.
+  useGSAP(
+    () => {
+      if (submitted) return;
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.fromTo(
+          ".form-field",
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "entrance",
+            stagger: 0.06,
+            scrollTrigger: { trigger: formRef.current, start: "top 80%", once: true },
+          }
+        );
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set(".form-field", { opacity: 1 });
+      });
+    },
+    { scope: pageRef, dependencies: [submitted], revertOnUpdate: true }
   );
 
   const onSubmit = async (data: FormValues) => {

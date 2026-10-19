@@ -87,52 +87,68 @@ export default function KarrierePage() {
         });
 
         gsap.utils.toArray<HTMLElement>(".section-reveal").forEach((el) => {
-          gsap.from(el, {
-            opacity: 0,
-            y: 30,
-            filter: "blur(6px)",
-            duration: 0.8,
-            ease: "entrance",
-            scrollTrigger: { trigger: el, start: "top 85%", once: true },
-          });
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 30, filter: "blur(6px)" },
+            {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              duration: 0.8,
+              ease: "entrance",
+              scrollTrigger: { trigger: el, start: "top 85%", once: true },
+            }
+          );
         });
 
         ScrollTrigger.batch(".benefit-card", {
           onEnter: (els) =>
-            gsap.from(els, {
-              opacity: 0,
-              y: 40,
-              filter: "blur(8px)",
-              duration: 0.7,
-              stagger: 0.08,
-              ease: "entrance",
-            }),
+            gsap.fromTo(
+              els,
+              { opacity: 0, y: 40, filter: "blur(8px)" },
+              {
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+                duration: 0.7,
+                stagger: 0.08,
+                ease: "entrance",
+              }
+            ),
           start: "top 88%",
           once: true,
         });
 
         ScrollTrigger.batch(".job-card", {
           onEnter: (els) =>
-            gsap.from(els, {
-              opacity: 0,
-              y: 30,
-              duration: 0.6,
-              stagger: 0.1,
-              ease: "entrance",
-            }),
+            gsap.fromTo(
+              els,
+              { opacity: 0, y: 30 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "entrance",
+              }
+            ),
           start: "top 88%",
           once: true,
         });
 
         ScrollTrigger.batch(".process-step", {
           onEnter: (els) =>
-            gsap.from(els, {
-              opacity: 0,
-              y: 40,
-              duration: 0.7,
-              stagger: 0.12,
-              ease: "entrance",
-            }),
+            gsap.fromTo(
+              els,
+              { opacity: 0, y: 40 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.12,
+                ease: "entrance",
+              }
+            ),
           start: "top 88%",
           once: true,
         });
@@ -141,7 +157,7 @@ export default function KarrierePage() {
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".career-headline, .section-reveal, .benefit-card, .job-card, .process-step", { opacity: 1 });
+        gsap.set(".career-headline, .section-reveal, .benefit-card, .job-card, .process-step", { opacity: 1, visibility: "visible" });
       });
     },
     { scope: pageRef }

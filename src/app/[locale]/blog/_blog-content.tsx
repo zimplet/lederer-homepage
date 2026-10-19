@@ -60,29 +60,37 @@ export function BlogPageContent({ featured, rest }: BlogPageContentProps) {
           },
         });
 
-        gsap.from(".featured-post", {
-          opacity: 0,
-          y: 50,
-          filter: "blur(8px)",
-          duration: 1,
-          ease: "entrance",
-          scrollTrigger: {
-            trigger: ".featured-post",
-            start: "top 85%",
-            once: true,
-          },
-        });
+        gsap.fromTo(
+          ".featured-post",
+          { opacity: 0, y: 50, filter: "blur(8px)" },
+          {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 1,
+            ease: "entrance",
+            scrollTrigger: {
+              trigger: ".featured-post",
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
 
         ScrollTrigger.batch(".post-card", {
           onEnter: (els) =>
-            gsap.from(els, {
-              opacity: 0,
-              y: 40,
-              filter: "blur(6px)",
-              duration: 0.7,
-              stagger: 0.1,
-              ease: "entrance",
-            }),
+            gsap.fromTo(
+              els,
+              { opacity: 0, y: 40, filter: "blur(6px)" },
+              {
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+                duration: 0.7,
+                stagger: 0.1,
+                ease: "entrance",
+              }
+            ),
           start: "top 88%",
           once: true,
         });
@@ -91,7 +99,7 @@ export function BlogPageContent({ featured, rest }: BlogPageContentProps) {
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(".blog-headline, .featured-post, .post-card", { opacity: 1 });
+        gsap.set(".blog-headline, .featured-post, .post-card", { opacity: 1, visibility: "visible" });
       });
     },
     { scope: pageRef }
