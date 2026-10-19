@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
-import { gsap, useGSAP, ScrollTrigger } from "@/lib/motion";
+import { gsap, useGSAP } from "@/lib/motion";
 
 interface RevealProps {
   children: ReactNode;

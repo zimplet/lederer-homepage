@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { gsap, useGSAP, ScrollTrigger } from "@/lib/motion";
+import { gsap, useGSAP } from "@/lib/motion";
 
 /**
  * Animated vertical yarn lines - the core branding element.

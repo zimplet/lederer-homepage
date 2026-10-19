@@ -31,6 +31,8 @@ export function CookieConsent() {
   useEffect(() => {
     const stored = getStoredConsent();
     if (!stored) {
+      // read after mount: localStorage is unavailable during SSR
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
     }
   }, []);
