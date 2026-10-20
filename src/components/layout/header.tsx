@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Link as LocaleLink, usePathname } from "@/i18n/navigation";
@@ -24,6 +24,18 @@ export function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setMobileOpen(false);
+      burgerRef.current?.focus();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
 
   useGSAP(
     () => {
@@ -91,7 +103,7 @@ export function Header() {
       {/* Floating pill */}
       <div
         ref={pillRef}
-        className="pointer-events-auto flex w-full max-w-5xl items-center justify-between rounded-full border border-white/10 bg-dark-deep/88 px-[var(--space-md)] py-3 shadow-[0_8px_40px_-4px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-xl"
+        className="pointer-events-auto relative z-50 flex w-full max-w-5xl items-center justify-between rounded-full border border-white/10 bg-dark-deep/88 px-[var(--space-md)] py-3 shadow-[0_8px_40px_-4px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-xl"
         style={{ opacity: 0 }}
       >
         {/* Logo */}
@@ -135,6 +147,7 @@ export function Header() {
 
           {/* Mobile burger */}
           <button
+            ref={burgerRef}
             onClick={toggleMobile}
             className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
             aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
@@ -155,7 +168,6 @@ export function Header() {
           ref={mobileMenuRef}
           className="pointer-events-auto fixed inset-0 z-40 flex flex-col items-center justify-center bg-dark-deep/97 backdrop-blur-xl lg:hidden"
           role="dialog"
-          aria-modal="true"
           aria-label="Mobile Navigation"
         >
           <nav className="flex flex-col items-center gap-[var(--space-lg)]">
