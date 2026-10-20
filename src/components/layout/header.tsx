@@ -23,7 +23,6 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -56,12 +55,15 @@ export function Header() {
     { scope: headerRef }
   );
 
-  const toggleMobile = () => {
-    setMobileOpen((prev) => {
-      const next = !prev;
-      if (next && mobileMenuRef.current) {
+  // The overlay only exists while open, so animate after it renders.
+  useGSAP(
+    () => {
+      if (!mobileOpen) return;
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
-          mobileMenuRef.current.querySelectorAll("[data-mobile-link]"),
+          "[data-mobile-link]",
           { opacity: 0, y: 20 },
           {
             opacity: 1,
@@ -72,10 +74,12 @@ export function Header() {
             delay: 0.1,
           }
         );
-      }
-      return next;
-    });
-  };
+      });
+    },
+    { scope: headerRef, dependencies: [mobileOpen], revertOnUpdate: true }
+  );
+
+  const toggleMobile = () => setMobileOpen((prev) => !prev);
 
   const alternateLocale = (locale === "de" ? "en" : "de") as "de" | "en";
   const rawPathname = usePathname();
@@ -165,7 +169,6 @@ export function Header() {
       {/* Mobile full-screen overlay */}
       {mobileOpen && (
         <div
-          ref={mobileMenuRef}
           className="pointer-events-auto fixed inset-0 z-40 flex flex-col items-center justify-center bg-dark-deep/97 backdrop-blur-xl lg:hidden"
           role="dialog"
           aria-label="Mobile Navigation"
