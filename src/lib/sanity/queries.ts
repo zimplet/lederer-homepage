@@ -45,7 +45,7 @@ export async function getRecentBlogPosts(
     : `_type == "blogPost"`;
   return getClient().fetch(
     `*[${condition}] | order(date desc)[0...$limit] { ${blogPostFields} }`,
-    { limit: limit - 1, excludeSlug: excludeSlug ?? "" },
+    { limit, excludeSlug: excludeSlug ?? "" },
     { next: { tags: ["blog"] } }
   );
 }

@@ -5,36 +5,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { gsap, useGSAP, ScrollTrigger } from "@/lib/motion";
-
-const POSTS = [
-  {
-    slug: "lycra-962l-dach-partner",
-    tag: "Partnerschaft",
-    date: "2024-03-15",
-    title: "Lederer als erster LYCRA® 962L Partner in der DACH-Region",
-    excerpt:
-      "Wir investierten in 11 neue Umwindemaschinen und sind nun exklusiver Partner für die innovativen LYCRA® 962L Fasern in der DACH-Region.",
-    featured: true,
-  },
-  {
-    slug: "grs-zertifizierung",
-    tag: "Nachhaltigkeit",
-    date: "2024-01-20",
-    title: "GRS-Zertifizierung für recycelte Garne",
-    excerpt:
-      "Jörg Lederer GmbH erhält die Global Recycled Standard Zertifizierung und setzt damit ein weiteres Zeichen für nachhaltiges Wirtschaften.",
-    featured: false,
-  },
-  {
-    slug: "neue-fuehrungsstruktur",
-    tag: "Unternehmen",
-    date: "2023-10-05",
-    title: "Starkes Führungstrio für die Zukunft",
-    excerpt:
-      "Beatrice Lederer, Bernd Grupp und Jörg Lederer leiten gemeinsam die Jörg Lederer GmbH in eine erfolgreiche Zukunft.",
-    featured: false,
-  },
-] as const;
+import type { BlogPostData } from "@/lib/blog-data";
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("de-DE", {
@@ -44,7 +15,7 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export function BlogTeaserSection() {
+export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
   const t = useTranslations("Blog");
   const containerRef = useRef<HTMLElement>(null);
 
@@ -113,7 +84,8 @@ export function BlogTeaserSection() {
     { scope: containerRef }
   );
 
-  const [featured, ...rest] = POSTS;
+  const [featured, ...rest] = posts;
+  if (!featured) return null;
 
   return (
     <section
