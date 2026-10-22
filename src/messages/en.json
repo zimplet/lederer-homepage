@@ -66,7 +66,8 @@
   "LinkedIn": {
     "title": "Follow us on LinkedIn",
     "subtitle": "News, insights and open positions straight from the company.",
-    "cta": "Follow on LinkedIn"
+    "cta": "Follow on LinkedIn",
+    "viewPost": "View on LinkedIn"
   },
   "Contact": {
     "title": "Contact",
