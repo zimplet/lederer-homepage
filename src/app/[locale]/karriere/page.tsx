@@ -173,12 +173,12 @@ export default function KarrierePage() {
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               Karriere
             </span>
           </div>
           <h1
-            className="career-headline max-w-[20ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
+            className="career-headline max-w-[20ch] font-heading text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
@@ -189,13 +189,13 @@ export default function KarrierePage() {
           <div className="mt-[var(--space-xl)] flex flex-wrap gap-[var(--space-sm)]">
             <Link
               href="#stellen"
-              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
             >
               {t("applyNow")} <ArrowRight className="h-5 w-5" />
             </Link>
             <Link
               href="#initiative"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
             >
               {t("initiativeApply")}
             </Link>
@@ -209,11 +209,11 @@ export default function KarrierePage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Deine Vorteile
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               Warum Lederer?
             </h2>
           </div>
@@ -236,12 +236,12 @@ export default function KarrierePage() {
 
           {/* Quote */}
           <blockquote className="mx-auto mt-[var(--space-xl)] max-w-[65ch] border-l-2 border-red pl-[var(--space-md)]">
-            <p className="font-heading text-[length:var(--text-xl)] italic leading-relaxed text-dark">
+            <p className="font-body text-[length:var(--text-xl)] italic leading-relaxed text-dark">
               &ldquo;Wir verfolgen weiter stringent unsere Strategie, werden junge Führungskräfte nachziehen
               und im Zusammenspiel mit unseren langjährigen Mitarbeitenden die Zukunftsfähigkeit des
               Unternehmens sichern.&rdquo;
             </p>
-            <cite className="mt-3 block font-body text-[length:var(--text-sm)] not-italic text-gray-400">
+            <cite className="mt-3 block font-heading text-[length:var(--text-sm)] not-italic text-gray-400">
               — Beatrice Lederer & Bernd Grupp, Geschäftsführung
             </cite>
           </blockquote>
@@ -254,11 +254,11 @@ export default function KarrierePage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("jobsSubtitle")}
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("jobsTitle")}
             </h2>
           </div>
@@ -272,13 +272,13 @@ export default function KarrierePage() {
               >
                 <div className="flex-1">
                   <div className="mb-2 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-red/10 px-3 py-0.5 font-body text-[length:var(--text-xs)] font-medium text-red">
+                    <span className="rounded-full bg-red/10 px-3 py-0.5 font-heading text-[length:var(--text-xs)] font-medium text-red">
                       {job.type}
                     </span>
-                    <span className="rounded-full bg-dark/8 px-3 py-0.5 font-body text-[length:var(--text-xs)] text-gray-500">
+                    <span className="rounded-full bg-dark/8 px-3 py-0.5 font-heading text-[length:var(--text-xs)] text-gray-500">
                       {job.department}
                     </span>
-                    <span className="flex items-center gap-1 font-body text-[length:var(--text-xs)] text-gray-400">
+                    <span className="flex items-center gap-1 font-heading text-[length:var(--text-xs)] text-gray-400">
                       <MapPin className="h-3 w-3" /> {job.location}
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export default function KarrierePage() {
                 </div>
                 <Link
                   href={`/kontakt?stelle=${job.id}`}
-                  className="flex flex-shrink-0 items-center gap-2 rounded-full border border-red px-[var(--space-md)] py-[var(--space-xs)] font-body text-[length:var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:bg-red group-hover:text-white"
+                  className="flex flex-shrink-0 items-center gap-2 rounded-full border border-red px-[var(--space-md)] py-[var(--space-xs)] font-heading text-[length:var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:bg-red group-hover:text-white"
                 >
                   Bewerben <ChevronRight className="h-4 w-4" />
                 </Link>
@@ -303,11 +303,11 @@ export default function KarrierePage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("processTagline")}
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("processTitle")}
             </h2>
           </div>
@@ -350,13 +350,13 @@ export default function KarrierePage() {
             <div className="mt-[var(--space-xl)] flex flex-wrap justify-center gap-[var(--space-sm)]">
               <a
                 href="mailto:bewerbung@lederer-elastic.de"
-                className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+                className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
               >
                 <Send className="h-5 w-5" /> {t("initiativeApply")}
               </a>
               <Link
                 href="/kontakt"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
               >
                 Kontaktformular
               </Link>

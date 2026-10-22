@@ -119,7 +119,7 @@ export function CareerTeaserSection() {
           <div className="career-left" style={{ opacity: 0 }}>
             {/* Large display number for impact */}
             <div
-              className="font-heading tracking-[-0.05em] text-[clamp(5rem,12vw,11rem)] font-black leading-none text-dark-deep/8 select-none"
+              className="font-heading text-[clamp(5rem,12vw,11rem)] font-black leading-none text-dark-deep/8 select-none"
               aria-hidden="true"
             >
               75
@@ -127,7 +127,7 @@ export function CareerTeaserSection() {
 
             {/* Overlapping heading */}
             <div className="-mt-[clamp(2rem,5vw,4rem)]">
-              <h2 className="font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-[1.0] text-dark-deep">
+              <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-[1.0] text-dark-deep">
                 {t("title")}
               </h2>
               <p className="mt-[var(--space-md)] max-w-[38ch] font-body text-[length:var(--text-lg)] leading-relaxed text-dark/60">
@@ -143,7 +143,7 @@ export function CareerTeaserSection() {
                 langjährigen Mitarbeitenden die Zukunftsfähigkeit des
                 Unternehmens sichern.&rdquo;
               </p>
-              <cite className="mt-2 block font-body text-[length:var(--text-sm)] not-italic text-dark/35">
+              <cite className="mt-2 block font-heading text-[length:var(--text-sm)] not-italic text-dark/35">
                 — Beatrice Lederer &amp; Bernd Grupp, Geschäftsführung
               </cite>
             </blockquote>
@@ -152,7 +152,7 @@ export function CareerTeaserSection() {
             <div className="mt-[var(--space-xl)] flex flex-wrap gap-[var(--space-sm)]">
               <Link
                 href="/karriere"
-                className="career-cta group inline-flex items-center gap-3 rounded-full bg-dark-deep px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-bold text-white transition-all duration-300 hover:bg-red hover:gap-4 hover:scale-[1.02]"
+                className="career-cta group inline-flex items-center gap-3 rounded-full bg-dark-deep px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-extrabold text-white transition-all duration-300 hover:bg-red hover:gap-4 hover:scale-[1.02]"
                 style={{ opacity: 0 }}
               >
                 {t("cta")}
@@ -160,7 +160,7 @@ export function CareerTeaserSection() {
               </Link>
               <Link
                 href="/karriere#initiativbewerbung"
-                className="career-cta inline-flex items-center gap-2 rounded-full border border-dark/15 bg-transparent px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red/40 hover:text-red"
+                className="career-cta inline-flex items-center gap-2 rounded-full border border-dark/15 bg-transparent px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red/40 hover:text-red"
                 style={{ opacity: 0 }}
               >
                 {t("ctaApply")}
@@ -177,7 +177,7 @@ export function CareerTeaserSection() {
                 style={{ opacity: 0 }}
               >
                 {/* Number */}
-                <span className="mt-1 flex-shrink-0 font-body text-[length:var(--text-sm)] font-bold tabular-nums text-dark/25 transition-colors duration-200 group-hover:text-red/50">
+                <span className="mt-1 flex-shrink-0 font-heading text-[length:var(--text-sm)] font-extrabold tabular-nums text-dark/25 transition-colors duration-200 group-hover:text-red/50">
                   {number}
                 </span>
 

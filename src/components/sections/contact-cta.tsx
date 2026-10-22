@@ -119,7 +119,7 @@ export function ContactCtaSection() {
       <div className="container-fluid relative z-10 text-center">
         {/* Massive display headline */}
         <h2
-          className="contact-display mx-auto max-w-[18ch] font-heading tracking-[-0.04em] text-[clamp(2.6rem,5.5vw,6.5rem)] font-black leading-[0.92] text-white"
+          className="contact-display mx-auto max-w-[18ch] font-heading text-[clamp(2.6rem,5.5vw,6.5rem)] font-black leading-[0.92] text-white"
           style={{ visibility: "hidden" }}
         >
           Lassen Sie uns über Ihr Garn sprechen.
@@ -132,14 +132,14 @@ export function ContactCtaSection() {
         >
           <Link
             href="/kontakt"
-            className="group inline-flex items-center gap-3 rounded-full bg-red px-[var(--space-2xl)] py-[var(--space-md)] font-body text-[length:var(--text-lg)] font-bold text-white transition-all duration-300 hover:bg-red-dark hover:gap-5 hover:scale-[1.02]"
+            className="group inline-flex items-center gap-3 rounded-full bg-red px-[var(--space-2xl)] py-[var(--space-md)] font-heading text-[length:var(--text-lg)] font-extrabold text-white transition-all duration-300 hover:bg-red-dark hover:gap-5 hover:scale-[1.02]"
           >
             Anfrage senden
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
           <a
             href="mailto:info@lederer-elastic.de"
-            className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/5 px-[var(--space-xl)] py-[var(--space-md)] font-body text-[length:var(--text-base)] font-semibold text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-white/35 hover:bg-white/10 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/5 px-[var(--space-xl)] py-[var(--space-md)] font-heading text-[length:var(--text-base)] font-semibold text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-white/35 hover:bg-white/10 hover:text-white"
           >
             E-Mail schreiben
           </a>
@@ -151,7 +151,7 @@ export function ContactCtaSection() {
         >
           <a
             href="tel:+4973312006-0"
-            className="contact-info-row font-body text-[length:var(--text-base)] font-medium text-white/40 transition-colors hover:text-white/80"
+            className="contact-info-row font-heading text-[length:var(--text-base)] font-medium text-white/40 transition-colors hover:text-white/80"
             style={{ opacity: 0 }}
           >
             +49 (0) 7331 2006-0
@@ -159,14 +159,14 @@ export function ContactCtaSection() {
           <div className="h-[1px] w-6 rotate-90 bg-white/15" aria-hidden="true" />
           <a
             href="mailto:info@lederer-elastic.de"
-            className="contact-info-row font-body text-[length:var(--text-base)] font-medium text-white/40 transition-colors hover:text-white/80"
+            className="contact-info-row font-heading text-[length:var(--text-base)] font-medium text-white/40 transition-colors hover:text-white/80"
             style={{ opacity: 0 }}
           >
             info@lederer-elastic.de
           </a>
           <div className="h-[1px] w-6 rotate-90 bg-white/15 hidden sm:block" aria-hidden="true" />
           <span
-            className="contact-info-row hidden font-body text-[length:var(--text-sm)] text-white/30 sm:block"
+            className="contact-info-row hidden font-heading text-[length:var(--text-sm)] text-white/30 sm:block"
             style={{ opacity: 0 }}
           >
             Mo. – Fr. 08:00 – 16:30 Uhr

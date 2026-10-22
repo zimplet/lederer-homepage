@@ -71,9 +71,9 @@
   --color-gray-700: #333333;
   --color-gray-800: #1a1a1a;
 
-  /* Proxima Nova (Styleguide): Text 400–700, Headlines ExtraBold/Black */
+  /* Styleguide: Fließtext in Proxima Nova, alles andere in Proxima Nova Extra Condensed */
   --font-body: var(--font-proxima), system-ui, sans-serif;
-  --font-heading: var(--font-proxima), system-ui, sans-serif;
+  --font-heading: var(--font-proxima-excn), system-ui, sans-serif;
 }
 
 /* --- Base Styles (in @layer so Tailwind utilities can override) --- */
@@ -81,7 +81,8 @@
   body {
     background-color: var(--color-cream);
     color: var(--color-dark);
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em; /* Extra Condensed braucht in kleinen Größen etwas Luft */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -91,7 +92,7 @@
     font-family: var(--font-heading);
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
     color: var(--color-dark-deep);
     overflow-wrap: break-word;
     hyphens: auto;
@@ -105,7 +106,9 @@
   h6 { font-size: var(--text-lg); }
 
   p {
+    font-family: var(--font-body);
     font-size: var(--text-base);
+    letter-spacing: normal;
     max-width: 72ch;
   }
 

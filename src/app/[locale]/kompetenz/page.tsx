@@ -98,12 +98,12 @@ export default function KompetenzPage() {
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               {t("tagline")}
             </span>
           </div>
           <h1
-            className="kompetenz-headline max-w-[22ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
+            className="kompetenz-headline max-w-[22ch] font-heading text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
@@ -126,7 +126,7 @@ export default function KompetenzPage() {
             ].map(({ value, label }) => (
               <div key={label} className="text-center text-white">
                 <div className="font-heading text-[length:var(--text-3xl)] font-black">{value}</div>
-                <div className="font-body text-[length:var(--text-sm)] text-white/80">{label}</div>
+                <div className="font-heading text-[length:var(--text-sm)] text-white/80">{label}</div>
               </div>
             ))}
           </div>
@@ -139,11 +139,11 @@ export default function KompetenzPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Technologie
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("machinesTitle")}
             </h2>
           </div>
@@ -172,11 +172,11 @@ export default function KompetenzPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Qualität
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("qualityTitle")}
             </h2>
           </div>
@@ -206,11 +206,11 @@ export default function KompetenzPage() {
           <div className="section-reveal max-w-[65ch]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Partnerschaft
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-white">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-white">
               Erster LYCRA® 962L Partner in der DACH-Region
             </h2>
             <p className="mt-[var(--space-md)] font-body text-[length:var(--text-lg)] leading-relaxed text-white/60">
@@ -221,7 +221,7 @@ export default function KompetenzPage() {
             </p>
             <Link
               href="/produkte#wrapped"
-              className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+              className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
             >
               Zu den umwundenen Garnen <ArrowRight className="h-5 w-5" />
             </Link>

@@ -6,7 +6,7 @@ export default function DatenschutzPage() {
           Datenschutzerklärung
         </h1>
 
-        <div className="space-y-[var(--space-lg)] font-body text-[length:var(--text-base)] leading-relaxed text-dark">
+        <div className="space-y-[var(--space-lg)] font-heading text-[length:var(--text-base)] leading-relaxed text-dark">
           <section>
             <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               1. Datenschutz auf einen Blick
@@ -90,12 +90,12 @@ export default function DatenschutzPage() {
             </h2>
             <p>Sie haben jederzeit das Recht auf:</p>
             <ul className="mt-2 list-disc pl-6 space-y-1">
-              <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
-              <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
-              <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
-              <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-              <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-              <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+              <li className="font-body">Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+              <li className="font-body">Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+              <li className="font-body">Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+              <li className="font-body">Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+              <li className="font-body">Datenübertragbarkeit (Art. 20 DSGVO)</li>
+              <li className="font-body">Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
             </ul>
             <p className="mt-4">
               Zur Ausübung Ihrer Rechte wenden Sie sich an:{" "}

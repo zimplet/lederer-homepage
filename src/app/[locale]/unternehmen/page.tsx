@@ -158,12 +158,12 @@ export default function UnternehmenPage() {
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               {t("tagline")}
             </span>
           </div>
           <h1
-            className="company-headline max-w-[18ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
+            className="company-headline max-w-[18ch] font-heading text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
@@ -180,11 +180,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Geschichte
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("timelineTitle")}
             </h2>
           </div>
@@ -208,7 +208,7 @@ export default function UnternehmenPage() {
 
                   {/* Content – alternating sides on desktop */}
                   <div className={`lg:w-1/2 ${i % 2 === 0 ? "lg:pr-[var(--space-xl)] lg:text-right" : "lg:ml-auto lg:pl-[var(--space-xl)]"}`}>
-                    <div className="inline-block rounded-full bg-red px-3 py-1 font-body text-[length:var(--text-sm)] font-bold text-white">
+                    <div className="inline-block rounded-full bg-red px-3 py-1 font-heading text-[length:var(--text-sm)] font-extrabold text-white">
                       {item.year}
                     </div>
                     <h3 className="mt-2 font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
@@ -231,11 +231,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("teamTagline")}
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("teamTitle")}
             </h2>
           </div>
@@ -254,7 +254,7 @@ export default function UnternehmenPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
                   <div className="font-heading text-[length:var(--text-xl)] font-black text-white">Beatrice Lederer</div>
-                  <div className="font-body text-[length:var(--text-sm)] text-white/70">Geschäftsführerin · 3. Generation</div>
+                  <div className="font-heading text-[length:var(--text-sm)] text-white/70">Geschäftsführerin · 3. Generation</div>
                 </div>
               </div>
               <div className="p-[var(--space-lg)]">
@@ -279,7 +279,7 @@ export default function UnternehmenPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
                   <div className="font-heading text-[length:var(--text-xl)] font-black text-white">Bernd Grupp</div>
-                  <div className="font-body text-[length:var(--text-sm)] text-white/70">Geschäftsführer</div>
+                  <div className="font-heading text-[length:var(--text-sm)] text-white/70">Geschäftsführer</div>
                 </div>
               </div>
               <div className="p-[var(--space-lg)]">
@@ -300,11 +300,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("valuesTagline")}
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("valuesTitle")}
             </h2>
           </div>
@@ -338,11 +338,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("sustainabilityTagline")}
               </span>
             </div>
-            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-white">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-white">
               {t("sustainabilityTitle")}
             </h2>
           </div>
@@ -381,13 +381,13 @@ export default function UnternehmenPage() {
           <div className="mt-[var(--space-lg)] flex flex-wrap justify-center gap-[var(--space-sm)]">
             <Link
               href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
             >
               Kontakt aufnehmen <ArrowRight className="h-5 w-5" />
             </Link>
             <Link
               href="/karriere"
-              className="inline-flex items-center gap-2 rounded-full border border-dark/20 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red hover:text-red"
+              className="inline-flex items-center gap-2 rounded-full border border-dark/20 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red hover:text-red"
             >
               Karriere bei Lederer
             </Link>

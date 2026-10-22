@@ -143,13 +143,13 @@ export function AboutTeaserSection() {
             {/* Tagline */}
             <div className="mb-[var(--space-md)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-red/80">
+              <span className="font-heading text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-red/80">
                 {t("tagline")}
               </span>
             </div>
 
             <h2
-              className="about-headline font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-[1.0] text-dark-deep"
+              className="about-headline font-heading text-[length:var(--text-4xl)] font-black leading-[1.0] text-dark-deep"
               style={{ visibility: "hidden" }}
             >
               {t("title")}
@@ -170,14 +170,14 @@ export function AboutTeaserSection() {
                   &ldquo;Wir haben große Produktkompetenz und viele erfahrene
                   Mitarbeiter — das birgt extremes Potenzial.&rdquo;
                 </p>
-                <cite className="mt-2 block font-body text-[length:var(--text-sm)] not-italic text-dark/40">
+                <cite className="mt-2 block font-heading text-[length:var(--text-sm)] not-italic text-dark/40">
                   — Bernd Grupp, Geschäftsführer
                 </cite>
               </blockquote>
 
               <Link
                 href="/unternehmen"
-                className="mt-[var(--space-xl)] inline-flex items-center gap-3 font-body text-[length:var(--text-base)] font-bold text-red transition-all duration-300 hover:gap-5"
+                className="mt-[var(--space-xl)] inline-flex items-center gap-3 font-heading text-[length:var(--text-base)] font-extrabold text-red transition-all duration-300 hover:gap-5"
               >
                 {t("cta")}
                 <ArrowRight className="h-5 w-5" />

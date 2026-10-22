@@ -9,7 +9,8 @@ import { CookieConsent } from "@/components/ui/cookie-consent";
 import { JsonLd, ORGANIZATION_LD, WEBSITE_LD } from "@/components/seo/json-ld";
 import "../globals.css";
 
-// Styleguide-Schrift: Proxima Nova – Text 400–700, Headlines ExtraBold/Black (800/900).
+// Styleguide: Fließtext in Proxima Nova, alles andere in Proxima Nova Extra Condensed.
+// Alle Dateien sind auf Latin (inkl. Umlaute, Satzzeichen, €) reduziert und enthalten nur die genutzten Schnitte.
 const proxima = localFont({
   src: [
     {
@@ -23,32 +24,44 @@ const proxima = localFont({
       style: "italic",
     },
     {
-      path: "../../../public/fonts/ProximaNova-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../../public/fonts/ProximaNova-Semibold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
       path: "../../../public/fonts/ProximaNova-Bold.woff2",
       weight: "700",
       style: "normal",
     },
+  ],
+  variable: "--font-proxima",
+  display: "swap",
+});
+
+const proximaExCn = localFont({
+  src: [
     {
-      path: "../../../public/fonts/ProximaNova-ExtraBold.woff2",
+      path: "../../../public/fonts/ProximaNovaExCn-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNovaExCn-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNovaExCn-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNovaExCn-ExtraBold.woff2",
       weight: "800",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/ProximaNova-Black.woff2",
+      path: "../../../public/fonts/ProximaNovaExCn-Black.woff2",
       weight: "900",
       style: "normal",
     },
   ],
-  variable: "--font-proxima",
+  variable: "--font-proxima-excn",
   display: "swap",
 });
 
@@ -126,9 +139,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${proxima.variable} h-full antialiased`}
+      className={`${proxima.variable} ${proximaExCn.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-dark font-body">
+      <body className="min-h-full flex flex-col bg-cream text-dark font-heading">
         <NextIntlClientProvider messages={messages}>
           <JsonLd data={ORGANIZATION_LD} />
           <JsonLd data={WEBSITE_LD} />

@@ -6,7 +6,7 @@ export default function ImpressumPage() {
           Impressum
         </h1>
 
-        <div className="space-y-[var(--space-lg)] font-body text-[length:var(--text-base)] leading-relaxed text-dark">
+        <div className="space-y-[var(--space-lg)] font-heading text-[length:var(--text-base)] leading-relaxed text-dark">
           <section>
             <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Angaben gemäß § 5 TMG

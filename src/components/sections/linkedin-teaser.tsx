@@ -58,7 +58,7 @@ export function LinkedInTeaserSection() {
           style={{ opacity: 0 }}
         >
           <div>
-            <h2 className="font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-tight text-white">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-white">
               {t("title")}
             </h2>
             <p className="mt-[var(--space-sm)] max-w-[52ch] font-body text-[length:var(--text-lg)] leading-relaxed text-white/55">
@@ -70,7 +70,7 @@ export function LinkedInTeaserSection() {
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex flex-shrink-0 items-center gap-3 self-start rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-colors duration-300 hover:bg-red-dark lg:self-auto"
+            className="group inline-flex flex-shrink-0 items-center gap-3 self-start rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[length:var(--text-base)] font-semibold text-white transition-colors duration-300 hover:bg-red-dark lg:self-auto"
           >
             <LinkedInIcon className="h-5 w-5" />
             {t("cta")}

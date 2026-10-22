@@ -121,7 +121,7 @@ export function StatsSection() {
 
       <div className="container-fluid">
         {/* Section eyebrow */}
-        <p className="mb-[var(--space-2xl)] font-body text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-dark/40">
+        <p className="mb-[var(--space-2xl)] font-heading text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-dark/40">
           In Zahlen
         </p>
 
@@ -142,7 +142,7 @@ export function StatsSection() {
               )}
 
               {/* Number */}
-              <div className="font-heading tracking-[-0.04em] text-[clamp(2.6rem,4.5vw,5rem)] font-black leading-none text-dark-deep">
+              <div className="font-heading text-[clamp(2.6rem,4.5vw,5rem)] font-black leading-none text-dark-deep">
                 <span data-count={stat.key}>0</span>
               </div>
 
@@ -153,7 +153,7 @@ export function StatsSection() {
               />
 
               {/* Label */}
-              <div className="font-body text-[length:var(--text-sm)] leading-snug text-dark/55 lg:max-w-[12ch]">
+              <div className="font-heading text-[length:var(--text-sm)] leading-snug text-dark/55 lg:max-w-[12ch]">
                 {t(stat.key)}
               </div>
             </div>

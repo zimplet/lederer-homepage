@@ -91,7 +91,7 @@ export function CookieConsent() {
         <div className="rounded-[var(--radius-lg)] border border-gray-200 bg-white p-[var(--space-md)] shadow-lg">
           <div className="flex flex-col gap-[var(--space-sm)] sm:flex-row sm:items-center sm:justify-between">
             <div className="flex-1">
-              <h2 className="font-body text-[length:var(--text-base)] font-bold text-dark-deep">
+              <h2 className="font-heading text-[length:var(--text-base)] font-extrabold text-dark-deep">
                 {t("title")}
               </h2>
               <p className="mt-1 text-[length:var(--text-sm)] text-gray-500">
