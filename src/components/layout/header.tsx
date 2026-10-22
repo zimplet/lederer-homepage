@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/produkte", key: "products" },
   { href: "/kompetenz", key: "expertise" },
   { href: "/karriere", key: "careers" },
-  { href: "/blog", key: "blog" },
   { href: "/kontakt", key: "contact" },
 ] as const;
 
@@ -27,13 +26,45 @@ export function Header() {
 
   useEffect(() => {
     if (!mobileOpen) return;
+
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      setMobileOpen(false);
-      burgerRef.current?.focus();
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        burgerRef.current?.focus();
+        return;
+      }
+      const header = headerRef.current;
+      if (e.key !== "Tab" || !header) return;
+      // Trap Tab inside the header (pill + overlay); skip display:none desktop links.
+      const items = [...header.querySelectorAll<HTMLElement>("a[href], button")].filter(
+        (el) => el.getClientRects().length > 0
+      );
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (!header.contains(active) || active === (e.shiftKey ? first : last)) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+
+    // Lock page scroll. Lenis scrolls via window.scrollTo, which ignores overflow,
+    // so the header also carries data-lenis-prevent while open.
+    const root = document.documentElement;
+    const prevOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+
+    // The overlay is lg:hidden: close with it so the lock never outlives the menu.
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const onDesktop = (e: MediaQueryListEvent) => e.matches && setMobileOpen(false);
+    desktop.addEventListener("change", onDesktop);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      root.style.overflow = prevOverflow;
+      desktop.removeEventListener("change", onDesktop);
+    };
   }, [mobileOpen]);
 
   useGSAP(
@@ -89,7 +120,6 @@ export function Header() {
     "/produkte",
     "/kompetenz",
     "/karriere",
-    "/blog",
     "/kontakt",
     "/impressum",
     "/datenschutz",
@@ -102,6 +132,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
+      data-lenis-prevent={mobileOpen ? "" : undefined}
       className="pointer-events-none fixed left-0 right-0 top-0 z-50 flex justify-center px-[var(--space-md)] pt-[var(--space-sm)]"
     >
       {/* Floating pill */}

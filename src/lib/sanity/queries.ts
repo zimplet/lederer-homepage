@@ -1,74 +1,11 @@
 import { getClient } from "./client";
 import type {
-  SanityBlogPost,
   SanityTeamMember,
   SanityJobPosting,
   SanityTestimonial,
   SanityCertificate,
   SanitySiteSettings,
 } from "./types";
-
-// ─── Blog ────────────────────────────────────────────────────────────────────
-
-const blogPostFields = `
-  _id, title, "slug": slug.current, excerpt, tag, date,
-  author, readingTime, featured, seoTitle, seoDescription
-`;
-
-const blogPostFullFields = `
-  ${blogPostFields}, content
-`;
-
-export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
-  return getClient().fetch(
-    `*[_type == "blogPost"] | order(date desc) { ${blogPostFields} }`,
-    {},
-    { next: { tags: ["blog"] } }
-  );
-}
-
-export async function getFeaturedBlogPost(): Promise<SanityBlogPost | null> {
-  const posts = await getClient().fetch<SanityBlogPost[]>(
-    `*[_type == "blogPost" && featured == true] | order(date desc)[0..0] { ${blogPostFields} }`,
-    {},
-    { next: { tags: ["blog"] } }
-  );
-  return posts[0] ?? null;
-}
-
-export async function getRecentBlogPosts(
-  limit = 3,
-  excludeSlug?: string
-): Promise<SanityBlogPost[]> {
-  const condition = excludeSlug
-    ? `_type == "blogPost" && slug.current != $excludeSlug`
-    : `_type == "blogPost"`;
-  return getClient().fetch(
-    `*[${condition}] | order(date desc)[0...$limit] { ${blogPostFields} }`,
-    { limit, excludeSlug: excludeSlug ?? "" },
-    { next: { tags: ["blog"] } }
-  );
-}
-
-export async function getBlogPostBySlug(
-  slug: string
-): Promise<SanityBlogPost | null> {
-  const posts = await getClient().fetch<SanityBlogPost[]>(
-    `*[_type == "blogPost" && slug.current == $slug][0..0] { ${blogPostFullFields} }`,
-    { slug },
-    { next: { tags: [`blog-${slug}`] } }
-  );
-  return posts[0] ?? null;
-}
-
-export async function getAllBlogSlugs(): Promise<string[]> {
-  const posts = await getClient().fetch<{ slug: string }[]>(
-    `*[_type == "blogPost"] { "slug": slug.current }`,
-    {},
-    { next: { tags: ["blog"] } }
-  );
-  return posts.map((p) => p.slug);
-}
 
 // ─── Team ────────────────────────────────────────────────────────────────────
 

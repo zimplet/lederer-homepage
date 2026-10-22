@@ -57,10 +57,15 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Redirect old URLs from current lederer-elastic.de structure
     return [
+      // Must precede the generic /de rule below to avoid a redirect chain.
+      { source: "/de/blog/:slug*", destination: "/", permanent: true },
       { source: "/de/:path*", destination: "/:path*", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/kontakt.html", destination: "/kontakt", permanent: true },
       { source: "/karriere.html", destination: "/karriere", permanent: true },
+      // Blog removed in favour of LinkedIn; keep old URLs alive for SEO.
+      { source: "/blog/:slug*", destination: "/", permanent: true },
+      { source: "/en/blog/:slug*", destination: "/en", permanent: true },
     ];
   },
 };

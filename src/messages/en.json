@@ -8,7 +8,6 @@
     "products": "Products",
     "expertise": "Expertise",
     "careers": "Careers",
-    "blog": "News",
     "contact": "Contact",
     "cta": "Send inquiry",
     "langSwitch": "Deutsch"
@@ -64,11 +63,10 @@
   "Certificates": {
     "title": "Certifications & Partners"
   },
-  "Blog": {
-    "title": "Latest News",
-    "subtitle": "News from our company",
-    "readMore": "Read more",
-    "allPosts": "All posts"
+  "LinkedIn": {
+    "title": "Follow us on LinkedIn",
+    "subtitle": "News, insights and open positions straight from the company.",
+    "cta": "Follow on LinkedIn"
   },
   "Contact": {
     "title": "Contact",

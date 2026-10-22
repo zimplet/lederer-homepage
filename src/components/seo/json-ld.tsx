@@ -1,4 +1,6 @@
 // Server component – no 'use client' needed
+import { LINKEDIN_URL } from "@/lib/social";
+
 interface JsonLdProps {
   data: Record<string, unknown>;
 }
@@ -37,6 +39,7 @@ export const ORGANIZATION_LD = {
   },
   sameAs: [
     "https://www.youtube.com/@ledererelasticyarns",
+    LINKEDIN_URL,
   ],
   numberOfEmployees: {
     "@type": "QuantitativeValue",
@@ -59,14 +62,6 @@ export const WEBSITE_LD = {
   "@type": "WebSite",
   name: "Lederer Elastic-Garne",
   url: "https://lederer-elastic.de",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://lederer-elastic.de/blog?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 export function breadcrumbLd(items: { name: string; url: string }[]) {
@@ -79,35 +74,5 @@ export function breadcrumbLd(items: { name: string; url: string }[]) {
       name: item.name,
       item: item.url,
     })),
-  };
-}
-
-export function blogPostLd(post: {
-  title: string;
-  excerpt: string;
-  date: string;
-  author: string;
-  slug: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: post.author,
-      worksFor: { "@type": "Organization", name: "Jörg Lederer GmbH" },
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Jörg Lederer GmbH",
-      logo: { "@type": "ImageObject", url: "https://lederer-elastic.de/images/Lederer Logo.svg" },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://lederer-elastic.de/blog/${post.slug}`,
-    },
   };
 }

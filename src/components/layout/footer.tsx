@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
+import { LinkedInIcon } from "@/components/ui/linkedin-icon";
+import { LINKEDIN_URL } from "@/lib/social";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -64,12 +66,15 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className="font-body text-[length:var(--text-sm)] text-white/55 transition-colors hover:text-white"
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-body text-[length:var(--text-sm)] text-white/55 transition-colors hover:text-white"
                 >
-                  News
-                </Link>
+                  <LinkedInIcon className="h-4 w-4" />
+                  LinkedIn
+                </a>
               </li>
             </ul>
           </div>

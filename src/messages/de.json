@@ -8,7 +8,6 @@
     "products": "Produkte",
     "expertise": "Kompetenz",
     "careers": "Karriere",
-    "blog": "News",
     "contact": "Kontakt",
     "cta": "Anfrage senden",
     "langSwitch": "English"
@@ -64,11 +63,10 @@
   "Certificates": {
     "title": "Zertifizierungen & Partner"
   },
-  "Blog": {
-    "title": "Aktuelles",
-    "subtitle": "Neuigkeiten aus unserem Unternehmen",
-    "readMore": "Weiterlesen",
-    "allPosts": "Alle Beiträge"
+  "LinkedIn": {
+    "title": "Folgen Sie uns auf LinkedIn",
+    "subtitle": "Neuigkeiten, Einblicke und offene Stellen direkt aus dem Unternehmen.",
+    "cta": "Auf LinkedIn folgen"
   },
   "Contact": {
     "title": "Kontakt",

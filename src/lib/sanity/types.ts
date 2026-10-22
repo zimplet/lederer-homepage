@@ -6,22 +6,6 @@ export interface SanityImageAsset {
   hotspot?: { x: number; y: number };
 }
 
-export interface SanityBlogPost {
-  _id: string;
-  _type: "blogPost";
-  title: string;
-  slug: { current: string };
-  excerpt: string;
-  content: PortableTextBlock[];
-  tag: string;
-  date: string;
-  author: string;
-  readingTime: number;
-  featured: boolean;
-  seoTitle?: string;
-  seoDescription?: string;
-}
-
 export interface SanityTeamMember {
   _id: string;
   _type: "teamMember";

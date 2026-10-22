@@ -29,7 +29,6 @@ export default defineConfig({
                   .documentId("siteSettings")
               ),
             S.divider(),
-            S.documentTypeListItem("blogPost").title("Blog-Beiträge"),
             S.documentTypeListItem("teamMember").title("Team"),
             S.documentTypeListItem("jobPosting").title("Stellenanzeigen"),
             S.documentTypeListItem("testimonial").title("Testimonials"),
