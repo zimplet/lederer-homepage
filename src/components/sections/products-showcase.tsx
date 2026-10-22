@@ -95,16 +95,16 @@ export function ProductsShowcaseSection() {
         {/* Header */}
         <div className="products-header mb-[var(--space-2xl)] flex items-end justify-between" style={{ opacity: 0 }}>
           <div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-[-0.03em] text-white">
+            <h2 className="font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-tight text-white">
               {t("title")}
             </h2>
-            <p className="mt-[var(--space-sm)] max-w-[48ch] font-body text-[var(--text-lg)] text-white/50">
+            <p className="mt-[var(--space-sm)] max-w-[48ch] font-body text-[length:var(--text-lg)] text-white/50">
               {t("subtitle")}
             </p>
           </div>
           <Link
             href="/produkte"
-            className="hidden items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red transition-all duration-300 hover:gap-4 lg:flex"
+            className="hidden items-center gap-2 font-body text-[length:var(--text-base)] font-semibold text-red transition-all duration-300 hover:gap-4 lg:flex"
           >
             {t("cta")} <ArrowRight className="h-5 w-5" />
           </Link>
@@ -140,16 +140,16 @@ export function ProductsShowcaseSection() {
 
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-[var(--space-lg)]">
-              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-red/80">
+              <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.22em] text-red/80">
                 Umwundene Garne
               </span>
-              <h3 className="mt-2 font-heading text-[var(--text-3xl)] font-black leading-tight text-white">
+              <h3 className="mt-2 font-heading text-[length:var(--text-3xl)] font-black leading-tight text-white">
                 {t("wrapped")}
               </h3>
-              <p className="mt-[var(--space-sm)] max-w-[40ch] font-body text-[var(--text-base)] leading-relaxed text-white/65">
+              <p className="mt-[var(--space-sm)] max-w-[40ch] font-body text-[length:var(--text-base)] leading-relaxed text-white/65">
                 {t("wrappedDesc")}
               </p>
-              <div className="mt-[var(--space-md)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/70 transition-all duration-300 group-hover:gap-4 group-hover:text-white">
+              <div className="mt-[var(--space-md)] flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-white/70 transition-all duration-300 group-hover:gap-4 group-hover:text-white">
                 Mehr erfahren <ArrowRight className="h-4 w-4" />
               </div>
             </div>
@@ -179,16 +179,16 @@ export function ProductsShowcaseSection() {
             <div className="absolute inset-0 bg-dark-deep/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             <div className="absolute bottom-0 left-0 right-0 p-[var(--space-md)]">
-              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-white/45">
+              <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.22em] text-white/45">
                 Luftverwirbelte Garne
               </span>
-              <h3 className="mt-1 font-heading text-[var(--text-xl)] font-bold leading-tight text-white">
+              <h3 className="mt-1 font-heading text-[length:var(--text-xl)] font-extrabold leading-tight text-white">
                 {t("airjet")}
               </h3>
-              <p className="mt-[var(--space-xs)] font-body text-[var(--text-sm)] leading-relaxed text-white/60">
+              <p className="mt-[var(--space-xs)] font-body text-[length:var(--text-sm)] leading-relaxed text-white/60">
                 {t("airjetDesc")}
               </p>
-              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
                 Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </div>
@@ -217,16 +217,16 @@ export function ProductsShowcaseSection() {
             <div className="absolute inset-0 bg-red/12 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             <div className="absolute bottom-0 left-0 right-0 p-[var(--space-md)]">
-              <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-red/70">
+              <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.22em] text-red/70">
                 Elasto Twist
               </span>
-              <h3 className="mt-1 font-heading text-[var(--text-xl)] font-bold leading-tight text-white">
+              <h3 className="mt-1 font-heading text-[length:var(--text-xl)] font-extrabold leading-tight text-white">
                 {t("elastotwist")}
               </h3>
-              <p className="mt-[var(--space-xs)] font-body text-[var(--text-sm)] leading-relaxed text-white/60">
+              <p className="mt-[var(--space-xs)] font-body text-[length:var(--text-sm)] leading-relaxed text-white/60">
                 {t("elastotwistDesc")}
               </p>
-              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
+              <div className="mt-[var(--space-sm)] flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-white/60 transition-all duration-300 group-hover:gap-3 group-hover:text-white">
                 Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </div>
@@ -241,7 +241,7 @@ export function ProductsShowcaseSection() {
         <div className="mt-[var(--space-xl)] lg:hidden">
           <Link
             href="/produkte"
-            className="inline-flex items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red"
+            className="inline-flex items-center gap-2 font-body text-[length:var(--text-base)] font-semibold text-red"
           >
             {t("cta")} <ArrowRight className="h-5 w-5" />
           </Link>

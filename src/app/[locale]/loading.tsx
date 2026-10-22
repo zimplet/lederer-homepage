@@ -13,7 +13,7 @@ export default function Loading() {
             <div className="h-1.5 w-1.5 rounded-full bg-red" />
           </div>
         </div>
-        <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.3em] text-white/30">
+        <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.3em] text-white/30">
           Lederer
         </span>
       </div>

@@ -105,16 +105,16 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
           style={{ opacity: 0 }}
         >
           <div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-[-0.03em] text-dark-deep">
+            <h2 className="font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("title")}
             </h2>
-            <p className="mt-[var(--space-sm)] font-body text-[var(--text-lg)] text-dark/50">
+            <p className="mt-[var(--space-sm)] font-body text-[length:var(--text-lg)] text-dark/50">
               {t("subtitle")}
             </p>
           </div>
           <Link
             href="/blog"
-            className="hidden items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red transition-all duration-300 hover:gap-4 lg:flex"
+            className="hidden items-center gap-2 font-body text-[length:var(--text-base)] font-semibold text-red transition-all duration-300 hover:gap-4 lg:flex"
           >
             {t("allPosts")} <ArrowRight className="h-5 w-5" />
           </Link>
@@ -136,7 +136,7 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
             >
               <path
                 d="M 40 0 C 38 80, 44 160, 40 300"
-                stroke="#e73137"
+                stroke="#e63036"
                 strokeWidth="1"
                 fill="none"
                 strokeLinecap="round"
@@ -144,14 +144,14 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
               />
               <path
                 d="M 200 0 C 204 100, 196 200, 200 300"
-                stroke="#e73137"
+                stroke="#e63036"
                 strokeWidth="0.8"
                 fill="none"
                 strokeLinecap="round"
               />
               <path
                 d="M 360 0 C 358 90, 364 180, 360 300"
-                stroke="#e73137"
+                stroke="#e63036"
                 strokeWidth="0.6"
                 fill="none"
                 strokeLinecap="round"
@@ -160,7 +160,7 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
             </svg>
 
             {/* Tag badge */}
-            <span className="relative m-[var(--space-md)] rounded-full border border-red/25 bg-red/15 px-3 py-1 font-body text-[var(--text-xs)] font-medium text-red/90">
+            <span className="relative m-[var(--space-md)] rounded-full border border-red/25 bg-red/15 px-3 py-1 font-body text-[length:var(--text-xs)] font-medium text-red/90">
               {featured.tag}
             </span>
 
@@ -173,16 +173,16 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
 
           {/* Content */}
           <div className="flex flex-col justify-center p-[var(--space-xl)]">
-            <span className="mb-[var(--space-sm)] font-body text-[var(--text-xs)] uppercase tracking-[0.18em] text-white/30">
+            <span className="mb-[var(--space-sm)] font-body text-[length:var(--text-xs)] uppercase tracking-[0.18em] text-white/30">
               {formatDate(featured.date)}
             </span>
-            <h3 className="font-heading text-[var(--text-2xl)] font-bold leading-tight tracking-[-0.02em] text-white">
+            <h3 className="font-heading tracking-[-0.02em] text-[length:var(--text-2xl)] font-extrabold leading-tight text-white">
               {featured.title}
             </h3>
-            <p className="mt-[var(--space-sm)] max-w-[52ch] font-body text-[var(--text-base)] leading-relaxed text-white/55">
+            <p className="mt-[var(--space-sm)] max-w-[52ch] font-body text-[length:var(--text-base)] leading-relaxed text-white/55">
               {featured.excerpt}
             </p>
-            <div className="mt-[var(--space-lg)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
+            <div className="mt-[var(--space-lg)] flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
               {t("readMore")} <ArrowRight className="h-4 w-4" />
             </div>
           </div>
@@ -204,22 +204,22 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
                   aria-hidden="true"
                 />
                 {/* Tag */}
-                <span className="absolute left-[var(--space-md)] top-[var(--space-md)] rounded-full border border-red/15 bg-white px-3 py-1 font-body text-[var(--text-xs)] font-medium text-red">
+                <span className="absolute left-[var(--space-md)] top-[var(--space-md)] rounded-full border border-red/15 bg-white px-3 py-1 font-body text-[length:var(--text-xs)] font-medium text-red">
                   {post.tag}
                 </span>
               </div>
 
               <div className="p-[var(--space-md)]">
-                <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.18em] text-dark/35">
+                <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.18em] text-dark/35">
                   {formatDate(post.date)}
                 </span>
-                <h3 className="mt-2 font-heading text-[var(--text-xl)] font-bold leading-tight tracking-[-0.02em] text-dark-deep">
+                <h3 className="mt-2 font-heading tracking-[-0.02em] text-[length:var(--text-xl)] font-extrabold leading-tight text-dark-deep">
                   {post.title}
                 </h3>
-                <p className="mt-[var(--space-xs)] font-body text-[var(--text-sm)] leading-relaxed text-dark/55">
+                <p className="mt-[var(--space-xs)] font-body text-[length:var(--text-sm)] leading-relaxed text-dark/55">
                   {post.excerpt}
                 </p>
-                <div className="mt-[var(--space-md)] flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
+                <div className="mt-[var(--space-md)] flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
                   {t("readMore")} <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
@@ -231,7 +231,7 @@ export function BlogTeaserSection({ posts }: { posts: BlogPostData[] }) {
         <div className="mt-[var(--space-lg)] lg:hidden">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 font-heading text-[var(--text-base)] font-semibold text-red"
+            className="inline-flex items-center gap-2 font-body text-[length:var(--text-base)] font-semibold text-red"
           >
             {t("allPosts")} <ArrowRight className="h-5 w-5" />
           </Link>

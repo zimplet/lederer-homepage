@@ -91,10 +91,10 @@ export function CookieConsent() {
         <div className="rounded-[var(--radius-lg)] border border-gray-200 bg-white p-[var(--space-md)] shadow-lg">
           <div className="flex flex-col gap-[var(--space-sm)] sm:flex-row sm:items-center sm:justify-between">
             <div className="flex-1">
-              <h2 className="font-heading text-[var(--text-base)] font-bold text-dark-deep">
+              <h2 className="font-body text-[length:var(--text-base)] font-bold text-dark-deep">
                 {t("title")}
               </h2>
-              <p className="mt-1 text-[var(--text-sm)] text-gray-500">
+              <p className="mt-1 text-[length:var(--text-sm)] text-gray-500">
                 {t("description")}
               </p>
             </div>
@@ -102,13 +102,13 @@ export function CookieConsent() {
             <div className="flex flex-shrink-0 gap-[var(--space-xs)]">
               <button
                 onClick={acceptNecessary}
-                className="rounded-full border border-gray-300 px-[var(--space-md)] py-[var(--space-xs)] text-[var(--text-sm)] font-medium text-dark transition-colors hover:border-dark hover:bg-gray-100"
+                className="rounded-full border border-gray-300 px-[var(--space-md)] py-[var(--space-xs)] text-[length:var(--text-sm)] font-medium text-dark transition-colors hover:border-dark hover:bg-gray-100"
               >
                 {t("acceptNecessary")}
               </button>
               <button
                 onClick={acceptAll}
-                className="rounded-full bg-red px-[var(--space-md)] py-[var(--space-xs)] text-[var(--text-sm)] font-semibold text-white transition-colors hover:bg-red-dark"
+                className="rounded-full bg-red px-[var(--space-md)] py-[var(--space-xs)] text-[length:var(--text-sm)] font-semibold text-white transition-colors hover:bg-red-dark"
               >
                 {t("acceptAll")}
               </button>

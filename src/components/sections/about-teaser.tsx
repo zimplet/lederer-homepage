@@ -134,7 +134,7 @@ export function AboutTeaserSection() {
       ref={containerRef}
       className="relative overflow-hidden bg-cream-dark py-[var(--space-section)]"
     >
-      <YarnLines color="rgba(82, 81, 73, 0.06)" />
+      <YarnLines color="rgba(26, 26, 26, 0.06)" />
 
       <div className="container-fluid">
         <div className="grid items-start gap-[var(--space-xl)] lg:grid-cols-[1fr_44%]">
@@ -143,13 +143,13 @@ export function AboutTeaserSection() {
             {/* Tagline */}
             <div className="mb-[var(--space-md)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.22em] text-red/80">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-red/80">
                 {t("tagline")}
               </span>
             </div>
 
             <h2
-              className="about-headline font-heading text-[var(--text-4xl)] font-black leading-[1.0] tracking-[-0.03em] text-dark-deep"
+              className="about-headline font-heading tracking-[-0.03em] text-[length:var(--text-4xl)] font-black leading-[1.0] text-dark-deep"
               style={{ visibility: "hidden" }}
             >
               {t("title")}
@@ -157,7 +157,7 @@ export function AboutTeaserSection() {
 
             {/* Body — word scrub */}
             <p
-              className="about-body-scrub mt-[var(--space-lg)] font-body text-[var(--text-lg)] leading-relaxed text-dark/65"
+              className="about-body-scrub mt-[var(--space-lg)] font-body text-[length:var(--text-lg)] leading-relaxed text-dark/65"
               style={{ visibility: "hidden" }}
             >
               {t("description")}
@@ -166,18 +166,18 @@ export function AboutTeaserSection() {
             {/* Quote + CTA */}
             <div className="about-secondary" style={{ opacity: 0 }}>
               <blockquote className="mt-[var(--space-xl)] border-l-2 border-red pl-[var(--space-md)]">
-                <p className="font-heading text-[var(--text-lg)] italic leading-relaxed text-dark">
+                <p className="font-body text-[length:var(--text-lg)] italic leading-relaxed text-dark">
                   &ldquo;Wir haben große Produktkompetenz und viele erfahrene
                   Mitarbeiter — das birgt extremes Potenzial.&rdquo;
                 </p>
-                <cite className="mt-2 block font-body text-[var(--text-sm)] not-italic text-dark/40">
+                <cite className="mt-2 block font-body text-[length:var(--text-sm)] not-italic text-dark/40">
                   — Bernd Grupp, Geschäftsführer
                 </cite>
               </blockquote>
 
               <Link
                 href="/unternehmen"
-                className="mt-[var(--space-xl)] inline-flex items-center gap-3 font-heading text-[var(--text-base)] font-bold text-red transition-all duration-300 hover:gap-5"
+                className="mt-[var(--space-xl)] inline-flex items-center gap-3 font-body text-[length:var(--text-base)] font-bold text-red transition-all duration-300 hover:gap-5"
               >
                 {t("cta")}
                 <ArrowRight className="h-5 w-5" />

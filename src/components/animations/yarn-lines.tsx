@@ -9,7 +9,7 @@ import { gsap, useGSAP } from "@/lib/motion";
  */
 export function YarnLines({
   className = "",
-  color = "rgba(231, 49, 55, 0.15)",
+  color = "rgba(230, 48, 54, 0.15)",
 }: {
   className?: string;
   color?: string;

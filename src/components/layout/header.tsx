@@ -124,7 +124,7 @@ export function Header() {
             <Link
               key={key}
               href={href}
-              className="font-heading text-[var(--text-sm)] font-medium text-white/50 transition-colors duration-200 hover:text-white"
+              className="font-body text-[length:var(--text-sm)] font-medium text-white/50 transition-colors duration-200 hover:text-white"
             >
               {t(key)}
             </Link>
@@ -136,7 +136,7 @@ export function Header() {
           <LocaleLink
             href={switchHref}
             locale={alternateLocale}
-            className="hidden font-body text-[var(--text-xs)] text-white/30 transition-colors hover:text-white/60 lg:block"
+            className="hidden font-body text-[length:var(--text-xs)] text-white/30 transition-colors hover:text-white/60 lg:block"
             aria-label={`Switch to ${t("langSwitch")}`}
           >
             {t("langSwitch")}
@@ -144,7 +144,7 @@ export function Header() {
 
           <Link
             href="/kontakt"
-            className="hidden rounded-full bg-red px-[var(--space-md)] py-[0.4rem] font-heading text-[var(--text-xs)] font-bold text-white transition-all duration-200 hover:bg-red-dark hover:scale-[1.03] lg:inline-flex"
+            className="hidden rounded-full bg-red px-[var(--space-md)] py-[0.4rem] font-body text-[length:var(--text-xs)] font-bold text-white transition-all duration-200 hover:bg-red-dark hover:scale-[1.03] lg:inline-flex"
           >
             {t("cta")}
           </Link>
@@ -180,7 +180,7 @@ export function Header() {
                 href={href}
                 data-mobile-link
                 onClick={() => setMobileOpen(false)}
-                className="font-heading text-[var(--text-2xl)] font-bold text-white/75 transition-colors hover:text-white"
+                className="font-heading text-[length:var(--text-2xl)] font-extrabold text-white/75 transition-colors hover:text-white"
               >
                 {t(key)}
               </Link>
@@ -193,7 +193,7 @@ export function Header() {
               <Link
                 href="/kontakt"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-lg)] font-bold text-white"
+                className="rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-lg)] font-bold text-white"
               >
                 {t("cta")}
               </Link>
@@ -202,7 +202,7 @@ export function Header() {
                 href={switchHref}
                 locale={alternateLocale}
                 onClick={() => setMobileOpen(false)}
-                className="font-body text-[var(--text-sm)] text-white/35"
+                className="font-body text-[length:var(--text-sm)] text-white/35"
               >
                 {t("langSwitch")}
               </LocaleLink>

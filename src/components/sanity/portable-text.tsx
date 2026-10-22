@@ -26,7 +26,7 @@ export function PortableText({ value }: PortableTextProps) {
                   className="w-full rounded-[var(--radius-lg)] object-cover"
                 />
                 {img.caption && (
-                  <figcaption className="mt-2 text-center font-body text-[var(--text-sm)] text-gray-400">
+                  <figcaption className="mt-2 text-center font-body text-[length:var(--text-sm)] text-gray-400">
                     {img.caption}
                   </figcaption>
                 )}
@@ -36,22 +36,22 @@ export function PortableText({ value }: PortableTextProps) {
         },
         block: {
           h2: ({ children }) => (
-            <h2 className="mt-[var(--space-xl)] mb-[var(--space-md)] font-heading text-[var(--text-2xl)] font-black text-dark-deep">
+            <h2 className="mt-[var(--space-xl)] mb-[var(--space-md)] font-heading text-[length:var(--text-2xl)] font-black text-dark-deep">
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="mt-[var(--space-lg)] mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h3 className="mt-[var(--space-lg)] mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               {children}
             </h3>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="my-[var(--space-lg)] border-l-4 border-red pl-[var(--space-md)] font-body text-[var(--text-lg)] italic text-gray-600">
+            <blockquote className="my-[var(--space-lg)] border-l-4 border-red pl-[var(--space-md)] font-body text-[length:var(--text-lg)] italic text-gray-600">
               {children}
             </blockquote>
           ),
           normal: ({ children }) => (
-            <p className="mb-[var(--space-md)] font-body text-[var(--text-base)] leading-relaxed text-gray-700">
+            <p className="mb-[var(--space-md)] font-body text-[length:var(--text-base)] leading-relaxed text-gray-700">
               {children}
             </p>
           ),
@@ -70,12 +70,12 @@ export function PortableText({ value }: PortableTextProps) {
         },
         listItem: {
           bullet: ({ children }) => (
-            <li className="relative font-body text-[var(--text-base)] text-gray-700 before:absolute before:-left-4 before:text-red before:content-['›']">
+            <li className="relative font-body text-[length:var(--text-base)] text-gray-700 before:absolute before:-left-4 before:text-red before:content-['›']">
               {children}
             </li>
           ),
           number: ({ children }) => (
-            <li className="font-body text-[var(--text-base)] text-gray-700">
+            <li className="font-body text-[length:var(--text-base)] text-gray-700">
               {children}
             </li>
           ),

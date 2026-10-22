@@ -2,13 +2,13 @@ export default function ImpressumPage() {
   return (
     <div className="bg-cream py-[var(--space-3xl)]">
       <div className="container-fluid max-w-[65ch]">
-        <h1 className="mb-[var(--space-xl)] font-heading text-[var(--text-4xl)] font-black text-dark-deep">
+        <h1 className="mb-[var(--space-xl)] font-heading text-[length:var(--text-4xl)] font-black text-dark-deep">
           Impressum
         </h1>
 
-        <div className="space-y-[var(--space-lg)] font-body text-[var(--text-base)] leading-relaxed text-dark">
+        <div className="space-y-[var(--space-lg)] font-body text-[length:var(--text-base)] leading-relaxed text-dark">
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Angaben gemäß § 5 TMG
             </h2>
             <address className="not-italic">
@@ -20,7 +20,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Kontakt
             </h2>
             <p>
@@ -31,7 +31,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Handelsregister
             </h2>
             <p>
@@ -41,7 +41,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Umsatzsteuer-ID
             </h2>
             <p>
@@ -51,14 +51,14 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Geschäftsführung
             </h2>
             <p>Beatrice Lederer, Bernd Grupp, Jörg Lederer</p>
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p>
@@ -69,7 +69,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Streitschlichtung
             </h2>
             <p>
@@ -90,7 +90,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Haftung für Inhalte
             </h2>
             <p>
@@ -102,7 +102,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               Urheberrecht
             </h2>
             <p>

@@ -185,7 +185,7 @@ export function HeroSection() {
       >
         <path
           d="M 7 0 C 6 28, 8 58, 7 100"
-          stroke="rgba(231,49,55,0.18)"
+          stroke="rgba(230,48,54,0.18)"
           strokeWidth="0.22"
           fill="none"
           strokeLinecap="round"
@@ -193,7 +193,7 @@ export function HeroSection() {
         />
         <path
           d="M 93 0 C 94 38, 92 68, 93 100"
-          stroke="rgba(231,49,55,0.1)"
+          stroke="rgba(230,48,54,0.1)"
           strokeWidth="0.18"
           fill="none"
           strokeLinecap="round"
@@ -209,14 +209,14 @@ export function HeroSection() {
               {/* Eyebrow */}
               <div className="mb-[var(--space-lg)] flex items-center gap-3">
                 <div className="h-[1px] w-10 bg-red" aria-hidden="true" />
-                <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.22em] text-white/45">
+                <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.22em] text-white/45">
                   Seit 1948
                 </span>
               </div>
 
               {/* Headline — max-w-[22ch] guarantees 2-line flow at all viewport sizes */}
               <h1
-                className="hero-headline max-w-[22ch] font-heading text-[clamp(2.8rem,5.2vw,5.8rem)] font-black leading-[0.92] tracking-[-0.04em] text-white"
+                className="hero-headline max-w-[22ch] font-heading tracking-[-0.04em] text-[clamp(2.8rem,5.2vw,5.8rem)] font-black leading-[0.92] text-white"
                 style={{ visibility: "hidden" }}
               >
                 {t("title")}
@@ -224,7 +224,7 @@ export function HeroSection() {
 
               {/* Subtitle */}
               <p
-                className="hero-subtitle mt-[var(--space-lg)] max-w-[44ch] font-body text-[var(--text-lg)] leading-relaxed text-white/60"
+                className="hero-subtitle mt-[var(--space-lg)] max-w-[44ch] font-body text-[length:var(--text-lg)] leading-relaxed text-white/60"
                 style={{ visibility: "hidden" }}
               >
                 {t("subtitle")}
@@ -234,7 +234,7 @@ export function HeroSection() {
               <div className="mt-[var(--space-xl)] flex flex-wrap items-center gap-[var(--space-sm)]">
                 <Link
                   href="/produkte"
-                  className="hero-cta group inline-flex items-center gap-3 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-bold text-white transition-all duration-300 hover:bg-red-dark hover:gap-4 hover:scale-[1.02]"
+                  className="hero-cta group inline-flex items-center gap-3 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-bold text-white transition-all duration-300 hover:bg-red-dark hover:gap-4 hover:scale-[1.02]"
                   style={{ opacity: 0 }}
                 >
                   {t("ctaProducts")}
@@ -242,7 +242,7 @@ export function HeroSection() {
                 </Link>
                 <Link
                   href="/karriere"
-                  className="hero-cta inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/7 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/45 hover:bg-white/14"
+                  className="hero-cta inline-flex items-center gap-2 rounded-full border border-white/22 bg-white/7 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/45 hover:bg-white/14"
                   style={{ opacity: 0 }}
                 >
                   {t("ctaCareers")}
@@ -284,7 +284,7 @@ export function HeroSection() {
         aria-label={t("scrollDown")}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="font-body text-[var(--text-xs)] uppercase tracking-[0.22em] text-white/30">
+          <span className="font-body text-[length:var(--text-xs)] uppercase tracking-[0.22em] text-white/30">
             {t("scrollDown")}
           </span>
           <ArrowDown className="h-4 w-4 text-white/30" />

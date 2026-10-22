@@ -2,16 +2,16 @@ export default function DatenschutzPage() {
   return (
     <div className="bg-cream py-[var(--space-3xl)]">
       <div className="container-fluid max-w-[65ch]">
-        <h1 className="mb-[var(--space-xl)] font-heading text-[var(--text-4xl)] font-black text-dark-deep">
+        <h1 className="mb-[var(--space-xl)] font-heading text-[length:var(--text-4xl)] font-black text-dark-deep">
           Datenschutzerklärung
         </h1>
 
-        <div className="space-y-[var(--space-lg)] font-body text-[var(--text-base)] leading-relaxed text-dark">
+        <div className="space-y-[var(--space-lg)] font-body text-[length:var(--text-base)] leading-relaxed text-dark">
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               1. Datenschutz auf einen Blick
             </h2>
-            <h3 className="mb-2 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">Allgemeine Hinweise</h3>
+            <h3 className="mb-2 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">Allgemeine Hinweise</h3>
             <p>
               Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
               personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene
@@ -20,16 +20,16 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               2. Allgemeine Hinweise und Pflichtinformationen
             </h2>
-            <h3 className="mb-2 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">Datenschutz</h3>
+            <h3 className="mb-2 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">Datenschutz</h3>
             <p>
               Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir
               behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen
               Datenschutzvorschriften sowie dieser Datenschutzerklärung.
             </p>
-            <h3 className="mb-2 mt-4 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">
+            <h3 className="mb-2 mt-4 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">
               Verantwortliche Stelle
             </h3>
             <address className="not-italic">
@@ -44,16 +44,16 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               3. Datenerfassung auf dieser Website
             </h2>
-            <h3 className="mb-2 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">Cookies</h3>
+            <h3 className="mb-2 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">Cookies</h3>
             <p>
               Unsere Website verwendet Cookies. Soweit diese Cookies technisch notwendig sind, werden
               sie ohne Ihre Einwilligung gesetzt (Art. 6 Abs. 1 lit. f DSGVO). Für alle anderen Cookies
               holen wir Ihre Einwilligung ein.
             </p>
-            <h3 className="mb-2 mt-4 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">
+            <h3 className="mb-2 mt-4 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">
               Server-Log-Dateien
             </h3>
             <p>
@@ -62,7 +62,7 @@ export default function DatenschutzPage() {
               Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden
               Rechners, Uhrzeit der Serveranfrage und IP-Adresse.
             </p>
-            <h3 className="mb-2 mt-4 font-heading text-[var(--text-lg)] font-semibold text-dark-deep">
+            <h3 className="mb-2 mt-4 font-heading text-[length:var(--text-lg)] font-semibold text-dark-deep">
               Kontaktformular
             </h3>
             <p>
@@ -74,7 +74,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               4. Analyse-Tools und Werbung
             </h2>
             <p>
@@ -85,7 +85,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="mb-[var(--space-sm)] font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+            <h2 className="mb-[var(--space-sm)] font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
               5. Ihre Rechte
             </h2>
             <p>Sie haben jederzeit das Recht auf:</p>
@@ -110,7 +110,7 @@ export default function DatenschutzPage() {
             </p>
           </section>
 
-          <p className="mt-[var(--space-xl)] border-t border-gray-200 pt-[var(--space-lg)] font-body text-[var(--text-sm)] text-gray-400">
+          <p className="mt-[var(--space-xl)] border-t border-gray-200 pt-[var(--space-lg)] font-body text-[length:var(--text-sm)] text-gray-400">
             Stand: April 2026
           </p>
         </div>

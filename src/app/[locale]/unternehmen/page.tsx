@@ -152,23 +152,23 @@ export default function UnternehmenPage() {
     <div ref={pageRef}>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark-deep pt-[var(--space-3xl)] pb-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(231,49,55,0.12),transparent_60%)]" aria-hidden="true" />
-        <YarnLines color="rgba(231,49,55,0.15)" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(230,48,54,0.12),transparent_60%)]" aria-hidden="true" />
+        <YarnLines color="rgba(230,48,54,0.15)" />
 
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               {t("tagline")}
             </span>
           </div>
           <h1
-            className="company-headline max-w-[18ch] font-heading text-[var(--text-hero)] font-black leading-[0.95] tracking-[-0.03em] text-white"
+            className="company-headline max-w-[18ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
           </h1>
-          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[var(--text-lg)] text-white/60">
+          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[length:var(--text-lg)] text-white/60">
             {t("heroSubtitle")}
           </p>
         </div>
@@ -180,11 +180,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Geschichte
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("timelineTitle")}
             </h2>
           </div>
@@ -208,13 +208,13 @@ export default function UnternehmenPage() {
 
                   {/* Content – alternating sides on desktop */}
                   <div className={`lg:w-1/2 ${i % 2 === 0 ? "lg:pr-[var(--space-xl)] lg:text-right" : "lg:ml-auto lg:pl-[var(--space-xl)]"}`}>
-                    <div className="inline-block rounded-full bg-red px-3 py-1 font-heading text-[var(--text-sm)] font-bold text-white">
+                    <div className="inline-block rounded-full bg-red px-3 py-1 font-body text-[length:var(--text-sm)] font-bold text-white">
                       {item.year}
                     </div>
-                    <h3 className="mt-2 font-heading text-[var(--text-xl)] font-bold text-dark-deep">
+                    <h3 className="mt-2 font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">
                       {item.title}
                     </h3>
-                    <p className="mt-1 font-body text-[var(--text-base)] text-gray-500">
+                    <p className="mt-1 font-body text-[length:var(--text-base)] text-gray-500">
                       {item.desc}
                     </p>
                   </div>
@@ -231,11 +231,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("teamTagline")}
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("teamTitle")}
             </h2>
           </div>
@@ -253,13 +253,13 @@ export default function UnternehmenPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
-                  <div className="font-heading text-[var(--text-xl)] font-black text-white">Beatrice Lederer</div>
-                  <div className="font-body text-[var(--text-sm)] text-white/70">Geschäftsführerin · 3. Generation</div>
+                  <div className="font-heading text-[length:var(--text-xl)] font-black text-white">Beatrice Lederer</div>
+                  <div className="font-body text-[length:var(--text-sm)] text-white/70">Geschäftsführerin · 3. Generation</div>
                 </div>
               </div>
               <div className="p-[var(--space-lg)]">
                 <blockquote className="border-l-2 border-red pl-[var(--space-md)]">
-                  <p className="font-heading text-[var(--text-lg)] italic leading-relaxed text-dark">
+                  <p className="font-body text-[length:var(--text-lg)] italic leading-relaxed text-dark">
                     &ldquo;Die Überlegung, im eigenen Familienunternehmen Verantwortung zu übernehmen, fühlte sich im Bauch einfach richtig an.&rdquo;
                   </p>
                 </blockquote>
@@ -278,13 +278,13 @@ export default function UnternehmenPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 to-transparent" />
                 <div className="absolute bottom-[var(--space-md)] left-[var(--space-md)]">
-                  <div className="font-heading text-[var(--text-xl)] font-black text-white">Bernd Grupp</div>
-                  <div className="font-body text-[var(--text-sm)] text-white/70">Geschäftsführer</div>
+                  <div className="font-heading text-[length:var(--text-xl)] font-black text-white">Bernd Grupp</div>
+                  <div className="font-body text-[length:var(--text-sm)] text-white/70">Geschäftsführer</div>
                 </div>
               </div>
               <div className="p-[var(--space-lg)]">
                 <blockquote className="border-l-2 border-red pl-[var(--space-md)]">
-                  <p className="font-heading text-[var(--text-lg)] italic leading-relaxed text-dark">
+                  <p className="font-body text-[length:var(--text-lg)] italic leading-relaxed text-dark">
                     &ldquo;Wir haben große Produktkompetenz und viele erfahrene Mitarbeiter – das birgt extremes Potenzial.&rdquo;
                   </p>
                 </blockquote>
@@ -300,11 +300,11 @@ export default function UnternehmenPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("valuesTagline")}
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("valuesTitle")}
             </h2>
           </div>
@@ -319,10 +319,10 @@ export default function UnternehmenPage() {
                 <div className="mb-[var(--space-md)] flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-red/10 transition-colors duration-300 group-hover:bg-red/20">
                   <Icon className="h-5 w-5 text-red" />
                 </div>
-                <h3 className="font-heading text-[var(--text-lg)] font-bold text-dark-deep">
+                <h3 className="font-heading text-[length:var(--text-lg)] font-extrabold text-dark-deep">
                   {title}
                 </h3>
-                <p className="mt-2 font-body text-[var(--text-sm)] leading-relaxed text-gray-500">
+                <p className="mt-2 font-body text-[length:var(--text-sm)] leading-relaxed text-gray-500">
                   {desc}
                 </p>
               </div>
@@ -333,16 +333,16 @@ export default function UnternehmenPage() {
 
       {/* ── Nachhaltigkeit ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark py-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(231,49,55,0.08),transparent_60%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(230,48,54,0.08),transparent_60%)]" aria-hidden="true" />
         <div className="container-fluid relative z-10">
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 {t("sustainabilityTagline")}
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-white">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-white">
               {t("sustainabilityTitle")}
             </h2>
           </div>
@@ -364,8 +364,8 @@ export default function UnternehmenPage() {
                 <div className="mb-[var(--space-sm)] flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-red/10">
                   <Icon className="h-5 w-5 text-red" />
                 </div>
-                <h3 className="font-heading text-[var(--text-lg)] font-bold text-white">{title}</h3>
-                <p className="mt-2 font-body text-[var(--text-sm)] leading-relaxed text-white/50">{desc}</p>
+                <h3 className="font-heading text-[length:var(--text-lg)] font-extrabold text-white">{title}</h3>
+                <p className="mt-2 font-body text-[length:var(--text-sm)] leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
           </div>
@@ -375,19 +375,19 @@ export default function UnternehmenPage() {
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="bg-cream py-[var(--space-xl)]">
         <div className="container-fluid text-center">
-          <h2 className="section-reveal font-heading text-[var(--text-3xl)] font-black text-dark-deep" style={{ opacity: 0 }}>
+          <h2 className="section-reveal font-heading text-[length:var(--text-3xl)] font-black text-dark-deep" style={{ opacity: 0 }}>
             Lernen Sie uns persönlich kennen
           </h2>
           <div className="mt-[var(--space-lg)] flex flex-wrap justify-center gap-[var(--space-sm)]">
             <Link
               href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+              className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
             >
               Kontakt aufnehmen <ArrowRight className="h-5 w-5" />
             </Link>
             <Link
               href="/karriere"
-              className="inline-flex items-center gap-2 rounded-full border border-dark/20 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red hover:text-red"
+              className="inline-flex items-center gap-2 rounded-full border border-dark/20 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-dark transition-all duration-300 hover:border-red hover:text-red"
             >
               Karriere bei Lederer
             </Link>

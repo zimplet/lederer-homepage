@@ -9,29 +9,46 @@ import { CookieConsent } from "@/components/ui/cookie-consent";
 import { JsonLd, ORGANIZATION_LD, WEBSITE_LD } from "@/components/seo/json-ld";
 import "../globals.css";
 
-const roboto = localFont({
+// Styleguide-Schrift: Proxima Nova – Text 400–700, Headlines ExtraBold/Black (800/900).
+const proxima = localFont({
   src: [
     {
-      path: "../../../public/fonts/Roboto-VariableFont_wdth,wght.ttf",
+      path: "../../../public/fonts/ProximaNova-Regular.woff2",
+      weight: "400",
       style: "normal",
     },
     {
-      path: "../../../public/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf",
+      path: "../../../public/fonts/ProximaNova-RegularItalic.woff2",
+      weight: "400",
       style: "italic",
     },
-  ],
-  variable: "--font-roboto",
-  display: "swap",
-});
-
-const splineSans = localFont({
-  src: [
     {
-      path: "../../../public/fonts/SplineSans-VariableFont_wght.ttf",
+      path: "../../../public/fonts/ProximaNova-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNova-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNova-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNova-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/ProximaNova-Black.woff2",
+      weight: "900",
       style: "normal",
     },
   ],
-  variable: "--font-spline-sans",
+  variable: "--font-proxima",
   display: "swap",
 });
 
@@ -109,7 +126,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${roboto.variable} ${splineSans.variable} h-full antialiased`}
+      className={`${proxima.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-dark font-body">
         <NextIntlClientProvider messages={messages}>

@@ -87,10 +87,10 @@ export function CertificatesMarqueeSection() {
             >
               <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" aria-hidden="true" />
               <div>
-                <div className="font-heading text-[var(--text-sm)] font-bold text-dark-deep">
+                <div className="font-body text-[length:var(--text-sm)] font-bold text-dark-deep">
                   {cert.name}
                 </div>
-                <div className="font-body text-[var(--text-xs)] text-dark/40">
+                <div className="font-body text-[length:var(--text-xs)] text-dark/40">
                   {cert.subtitle}
                 </div>
               </div>

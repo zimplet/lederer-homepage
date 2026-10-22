@@ -53,23 +53,27 @@
 /* inline: utilities keep CSS vars at runtime (enables opacity modifiers) */
 @theme inline {
   /* Brand colors – direct values, NOT var() to avoid circular references */
-  --color-red: #e73137;
+  /* Styleguide: Hausfarbe #e63036 + Schwarz #000000, Abstufungen in 10%-Schritten */
+  --color-red: #e63036;
   --color-red-dark: #c4282d;
   --color-red-light: #f5565b;
-  --color-dark: #525149;
-  --color-dark-deep: #3a3932;
-  --color-cream: #f5f3ef;
-  --color-cream-dark: #ebe8e2;
+  --color-dark: #1a1a1a;
+  --color-dark-deep: #000000;
+  --color-cream: #f2f2f2;
+  --color-cream-dark: #e6e6e6;
   --color-white: #ffffff;
-  --color-gray-100: #f7f6f4;
-  --color-gray-200: #e8e6e1;
-  --color-gray-300: #d4d1ca;
-  --color-gray-400: #a8a49c;
-  --color-gray-500: #7c7870;
-  --color-gray-600: #5e5b54;
+  --color-gray-100: #f7f7f7;
+  --color-gray-200: #e6e6e6;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #999999;
+  --color-gray-500: #666666;
+  --color-gray-600: #4d4d4d;
+  --color-gray-700: #333333;
+  --color-gray-800: #1a1a1a;
 
-  --font-body: var(--font-roboto), system-ui, sans-serif;
-  --font-heading: var(--font-spline-sans), system-ui, sans-serif;
+  /* Proxima Nova (Styleguide): Text 400–700, Headlines ExtraBold/Black */
+  --font-body: var(--font-proxima), system-ui, sans-serif;
+  --font-heading: var(--font-proxima), system-ui, sans-serif;
 }
 
 /* --- Base Styles (in @layer so Tailwind utilities can override) --- */
@@ -85,10 +89,12 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--color-dark-deep);
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   h1 { font-size: var(--text-hero); }

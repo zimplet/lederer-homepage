@@ -92,27 +92,27 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
     <div ref={pageRef}>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark-deep pt-[var(--space-3xl)] pb-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(231,49,55,0.1),transparent_60%)]" aria-hidden="true" />
-        <YarnLines color="rgba(231,49,55,0.12)" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(230,48,54,0.1),transparent_60%)]" aria-hidden="true" />
+        <YarnLines color="rgba(230,48,54,0.12)" />
 
         <div className="container-fluid relative z-10 max-w-[75ch]">
           {/* Back link */}
           <Link
             href="/blog"
-            className="mb-[var(--space-lg)] inline-flex items-center gap-2 font-body text-[var(--text-sm)] text-white/50 transition-colors hover:text-white"
+            className="mb-[var(--space-lg)] inline-flex items-center gap-2 font-body text-[length:var(--text-sm)] text-white/50 transition-colors hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" /> Alle Beiträge
           </Link>
 
           {/* Tag */}
           <div className="mb-[var(--space-sm)]">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-red/20 px-3 py-1 font-body text-[var(--text-xs)] font-medium text-red">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-red/20 px-3 py-1 font-body text-[length:var(--text-xs)] font-medium text-red">
               <Tag className="h-3 w-3" /> {post.tag}
             </span>
           </div>
 
           <h1
-            className="post-headline font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-white"
+            className="post-headline font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-white"
             style={{ visibility: "hidden" }}
           >
             {post.title}
@@ -120,13 +120,13 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
 
           {/* Meta */}
           <div className="post-meta mt-[var(--space-md)] flex flex-wrap items-center gap-[var(--space-md)] border-t border-white/10 pt-[var(--space-md)]" style={{ opacity: 0 }}>
-            <span className="flex items-center gap-2 font-body text-[var(--text-sm)] text-white/50">
+            <span className="flex items-center gap-2 font-body text-[length:var(--text-sm)] text-white/50">
               <User className="h-4 w-4" /> {post.author}
             </span>
-            <span className="flex items-center gap-2 font-body text-[var(--text-sm)] text-white/50">
+            <span className="flex items-center gap-2 font-body text-[length:var(--text-sm)] text-white/50">
               <Calendar className="h-4 w-4" /> {formatPostDate(post.date)}
             </span>
-            <span className="flex items-center gap-2 font-body text-[var(--text-sm)] text-white/50">
+            <span className="flex items-center gap-2 font-body text-[length:var(--text-sm)] text-white/50">
               <Clock className="h-4 w-4" /> {post.readingTime} Min. Lesezeit
             </span>
           </div>
@@ -140,7 +140,7 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
             {/* Main content */}
             <article className="post-body max-w-[75ch] flex-1" style={{ opacity: 0 }}>
               {/* Lead */}
-              <p className="mb-[var(--space-lg)] font-body text-[var(--text-xl)] leading-relaxed text-gray-600">
+              <p className="mb-[var(--space-lg)] font-body text-[length:var(--text-xl)] leading-relaxed text-gray-600">
                 {post.excerpt}
               </p>
 
@@ -160,7 +160,7 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
               <div className="mt-[var(--space-xl)] border-t border-gray-200 pt-[var(--space-lg)]">
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+                  className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
                 >
                   Kontakt aufnehmen <ArrowRight className="h-5 w-5" />
                 </Link>
@@ -177,30 +177,30 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
                       {post.author.charAt(0)}
                     </div>
                     <div>
-                      <div className="font-heading text-[var(--text-base)] font-bold text-dark-deep">{post.author}</div>
-                      <div className="font-body text-[var(--text-xs)] text-gray-400">Jörg Lederer GmbH</div>
+                      <div className="font-body text-[length:var(--text-base)] font-bold text-dark-deep">{post.author}</div>
+                      <div className="font-body text-[length:var(--text-xs)] text-gray-400">Jörg Lederer GmbH</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick links */}
                 <div className="rounded-[var(--radius-xl)] border border-dark/8 bg-white p-[var(--space-lg)]">
-                  <h3 className="mb-3 font-heading text-[var(--text-base)] font-bold text-dark-deep">
+                  <h3 className="mb-3 font-body text-[length:var(--text-base)] font-bold text-dark-deep">
                     Weiterführendes
                   </h3>
                   <ul className="space-y-2">
                     <li>
-                      <Link href="/produkte" className="font-body text-[var(--text-sm)] text-red hover:underline">
+                      <Link href="/produkte" className="font-body text-[length:var(--text-sm)] text-red hover:underline">
                         → Unsere Produkte
                       </Link>
                     </li>
                     <li>
-                      <Link href="/kontakt" className="font-body text-[var(--text-sm)] text-red hover:underline">
+                      <Link href="/kontakt" className="font-body text-[length:var(--text-sm)] text-red hover:underline">
                         → Kontakt & Anfrage
                       </Link>
                     </li>
                     <li>
-                      <Link href="/karriere" className="font-body text-[var(--text-sm)] text-red hover:underline">
+                      <Link href="/karriere" className="font-body text-[length:var(--text-sm)] text-red hover:underline">
                         → Karriere bei Lederer
                       </Link>
                     </li>
@@ -216,7 +216,7 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
       {related.length > 0 && (
         <section className="bg-cream-dark py-[var(--space-section)]">
           <div className="container-fluid">
-            <h2 className="mb-[var(--space-xl)] font-heading text-[var(--text-3xl)] font-black tracking-tight text-dark-deep">
+            <h2 className="mb-[var(--space-xl)] font-heading tracking-tight text-[length:var(--text-3xl)] font-black text-dark-deep">
               Weitere Beiträge
             </h2>
             <div className="grid gap-[var(--space-md)] sm:grid-cols-2 lg:grid-cols-3">
@@ -232,15 +232,15 @@ export function BlogPostContent({ post, related }: BlogPostContentProps) {
                   </div>
                   <div className="p-[var(--space-md)]">
                     <div className="mb-2 flex items-center gap-2">
-                      <span className="font-body text-[var(--text-xs)] text-red">{relPost.tag}</span>
-                      <span className="font-body text-[var(--text-xs)] text-gray-400">
+                      <span className="font-body text-[length:var(--text-xs)] text-red">{relPost.tag}</span>
+                      <span className="font-body text-[length:var(--text-xs)] text-gray-400">
                         {formatPostDate(relPost.date)}
                       </span>
                     </div>
-                    <h3 className="font-heading text-[var(--text-lg)] font-bold leading-tight text-dark-deep">
+                    <h3 className="font-heading text-[length:var(--text-lg)] font-extrabold leading-tight text-dark-deep">
                       {relPost.title}
                     </h3>
-                    <div className="mt-3 flex items-center gap-2 font-heading text-[var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
+                    <div className="mt-3 flex items-center gap-2 font-body text-[length:var(--text-sm)] font-semibold text-red transition-all duration-300 group-hover:gap-4">
                       {t("readMore")} <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>

@@ -92,23 +92,23 @@ export default function KompetenzPage() {
     <div ref={pageRef}>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark-deep pt-[var(--space-3xl)] pb-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(231,49,55,0.12),transparent_60%)]" aria-hidden="true" />
-        <YarnLines color="rgba(231,49,55,0.15)" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(230,48,54,0.12),transparent_60%)]" aria-hidden="true" />
+        <YarnLines color="rgba(230,48,54,0.15)" />
 
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               {t("tagline")}
             </span>
           </div>
           <h1
-            className="kompetenz-headline max-w-[22ch] font-heading text-[var(--text-hero)] font-black leading-[0.95] tracking-[-0.03em] text-white"
+            className="kompetenz-headline max-w-[22ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
           </h1>
-          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[var(--text-lg)] text-white/60">
+          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[length:var(--text-lg)] text-white/60">
             {t("heroSubtitle")}
           </p>
         </div>
@@ -125,8 +125,8 @@ export default function KompetenzPage() {
               { value: "20.000 m²", label: "Produktionsfläche" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center text-white">
-                <div className="font-heading text-[var(--text-3xl)] font-black">{value}</div>
-                <div className="font-body text-[var(--text-sm)] text-white/80">{label}</div>
+                <div className="font-heading text-[length:var(--text-3xl)] font-black">{value}</div>
+                <div className="font-body text-[length:var(--text-sm)] text-white/80">{label}</div>
               </div>
             ))}
           </div>
@@ -139,11 +139,11 @@ export default function KompetenzPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Technologie
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("machinesTitle")}
             </h2>
           </div>
@@ -156,10 +156,10 @@ export default function KompetenzPage() {
                 style={{ opacity: 0 }}
               >
                 <div className="mb-[var(--space-sm)] flex items-center justify-between">
-                  <h3 className="font-heading text-[var(--text-xl)] font-bold text-dark-deep">{m.name}</h3>
-                  <span className="font-heading text-[var(--text-2xl)] font-black text-red">{m.count}</span>
+                  <h3 className="font-heading text-[length:var(--text-xl)] font-extrabold text-dark-deep">{m.name}</h3>
+                  <span className="font-heading text-[length:var(--text-2xl)] font-black text-red">{m.count}</span>
                 </div>
-                <p className="font-body text-[var(--text-base)] leading-relaxed text-gray-500">{m.desc}</p>
+                <p className="font-body text-[length:var(--text-base)] leading-relaxed text-gray-500">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -172,11 +172,11 @@ export default function KompetenzPage() {
           <div className="section-reveal mb-[var(--space-xl)]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Qualität
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
               {t("qualityTitle")}
             </h2>
           </div>
@@ -191,8 +191,8 @@ export default function KompetenzPage() {
                 <div className="mb-[var(--space-md)] flex h-12 w-12 items-center justify-center rounded-[var(--radius-md)] bg-red/10">
                   <Icon className="h-5 w-5 text-red" />
                 </div>
-                <h3 className="font-heading text-[var(--text-lg)] font-bold text-dark-deep">{title}</h3>
-                <p className="mt-2 font-body text-[var(--text-sm)] leading-relaxed text-gray-500">{desc}</p>
+                <h3 className="font-heading text-[length:var(--text-lg)] font-extrabold text-dark-deep">{title}</h3>
+                <p className="mt-2 font-body text-[length:var(--text-sm)] leading-relaxed text-gray-500">{desc}</p>
               </div>
             ))}
           </div>
@@ -201,19 +201,19 @@ export default function KompetenzPage() {
 
       {/* ── LYCRA Partnership Highlight ──────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark py-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(231,49,55,0.1),transparent_60%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(230,48,54,0.1),transparent_60%)]" aria-hidden="true" />
         <div className="container-fluid relative z-10">
           <div className="section-reveal max-w-[65ch]" style={{ opacity: 0 }}>
             <div className="mb-[var(--space-sm)] flex items-center gap-3">
               <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-              <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+              <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
                 Partnerschaft
               </span>
             </div>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-white">
+            <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-white">
               Erster LYCRA® 962L Partner in der DACH-Region
             </h2>
-            <p className="mt-[var(--space-md)] font-body text-[var(--text-lg)] leading-relaxed text-white/60">
+            <p className="mt-[var(--space-md)] font-body text-[length:var(--text-lg)] leading-relaxed text-white/60">
               Wir haben als erstes Unternehmen in Deutschland, Österreich und der Schweiz in 11 neue
               Umwindemaschinen für die innovative LYCRA® 962L Faser investiert. Diese Technologie
               ermöglicht Garne mit verbesserter Chlorresistenz, höherer Beständigkeit und überlegenem
@@ -221,7 +221,7 @@ export default function KompetenzPage() {
             </p>
             <Link
               href="/produkte#wrapped"
-              className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+              className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
             >
               Zu den umwundenen Garnen <ArrowRight className="h-5 w-5" />
             </Link>

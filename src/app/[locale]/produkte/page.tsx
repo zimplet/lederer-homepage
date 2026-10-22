@@ -140,23 +140,23 @@ export default function ProduktePage() {
     <div ref={pageRef}>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark-deep pt-[var(--space-3xl)] pb-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(231,49,55,0.12),transparent_60%)]" aria-hidden="true" />
-        <YarnLines color="rgba(231,49,55,0.15)" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(230,48,54,0.12),transparent_60%)]" aria-hidden="true" />
+        <YarnLines color="rgba(230,48,54,0.15)" />
 
         <div className="container-fluid relative z-10">
           <div className="mb-[var(--space-sm)] flex items-center gap-3">
             <div className="h-[1px] w-8 bg-red" aria-hidden="true" />
-            <span className="font-body text-[var(--text-sm)] uppercase tracking-[0.2em] text-red">
+            <span className="font-body text-[length:var(--text-sm)] uppercase tracking-[0.2em] text-red">
               {t("tagline")}
             </span>
           </div>
           <h1
-            className="products-headline max-w-[22ch] font-heading text-[var(--text-hero)] font-black leading-[0.95] tracking-[-0.03em] text-white"
+            className="products-headline max-w-[22ch] font-heading tracking-[-0.03em] text-[length:var(--text-hero)] font-black leading-[0.95] text-white"
             style={{ visibility: "hidden" }}
           >
             {t("heroTitle")}
           </h1>
-          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[var(--text-lg)] text-white/60">
+          <p className="mt-[var(--space-lg)] max-w-[50ch] font-body text-[length:var(--text-lg)] text-white/60">
             {t("heroSubtitle")}
           </p>
         </div>
@@ -179,15 +179,15 @@ export default function ProduktePage() {
                       <Icon className="h-6 w-6 text-red" />
                     </div>
                   </div>
-                  <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight tracking-tight text-dark-deep">
+                  <h2 className="font-heading tracking-tight text-[length:var(--text-4xl)] font-black leading-tight text-dark-deep">
                     {t(`${key}Title`)}
                   </h2>
-                  <p className="mt-[var(--space-md)] font-body text-[var(--text-lg)] leading-relaxed text-gray-500">
+                  <p className="mt-[var(--space-md)] font-body text-[length:var(--text-lg)] leading-relaxed text-gray-500">
                     {description}
                   </p>
                   <Link
                     href="/kontakt"
-                    className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+                    className="mt-[var(--space-lg)] inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
                   >
                     {t("inquiryCta")} <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -199,14 +199,14 @@ export default function ProduktePage() {
                 <div className={`rounded-[var(--radius-xl)] border ${borderColor} bg-white p-[var(--space-lg)] shadow-sm`}>
                   {/* Applications */}
                   <div className="mb-[var(--space-lg)]">
-                    <h3 className="mb-[var(--space-sm)] font-heading text-[var(--text-base)] font-bold uppercase tracking-wider text-gray-400">
+                    <h3 className="mb-[var(--space-sm)] font-body text-[length:var(--text-base)] font-bold uppercase tracking-wider text-gray-400">
                       Anwendungen
                     </h3>
                     <ul className="space-y-2">
                       {applications.map((app) => (
                         <li key={app} className="spec-item flex items-start gap-3" style={{ opacity: 0 }}>
                           <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-red" />
-                          <span className="font-body text-[var(--text-base)] text-dark">{app}</span>
+                          <span className="font-body text-[length:var(--text-base)] text-dark">{app}</span>
                         </li>
                       ))}
                     </ul>
@@ -214,14 +214,14 @@ export default function ProduktePage() {
 
                   {/* Technical specs */}
                   <div className="border-t border-gray-100 pt-[var(--space-md)]">
-                    <h3 className="mb-[var(--space-sm)] font-heading text-[var(--text-base)] font-bold uppercase tracking-wider text-gray-400">
+                    <h3 className="mb-[var(--space-sm)] font-body text-[length:var(--text-base)] font-bold uppercase tracking-wider text-gray-400">
                       Technische Details
                     </h3>
                     <ul className="space-y-2">
                       {specs.map((spec) => (
                         <li key={spec} className="spec-item flex items-start gap-3" style={{ opacity: 0 }}>
                           <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red" />
-                          <span className="font-body text-[var(--text-sm)] text-gray-500">{spec}</span>
+                          <span className="font-body text-[length:var(--text-sm)] text-gray-500">{spec}</span>
                         </li>
                       ))}
                     </ul>
@@ -235,26 +235,26 @@ export default function ProduktePage() {
 
       {/* ── Individual Yarn CTA ──────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-dark py-[var(--space-section)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(231,49,55,0.1),transparent_60%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(230,48,54,0.1),transparent_60%)]" aria-hidden="true" />
         <div className="container-fluid relative z-10 text-center">
           <div className="section-reveal" style={{ opacity: 0 }}>
-            <h2 className="font-heading text-[var(--text-4xl)] font-black leading-tight text-white">
+            <h2 className="font-heading text-[length:var(--text-4xl)] font-black leading-tight text-white">
               Ihr individuelles Garn
             </h2>
-            <p className="mx-auto mt-[var(--space-md)] max-w-[55ch] font-body text-[var(--text-lg)] text-white/60">
+            <p className="mx-auto mt-[var(--space-md)] max-w-[55ch] font-body text-[length:var(--text-lg)] text-white/60">
               Kein Standardgarn trifft Ihre Anforderungen? Wir entwickeln maßgeschneiderte Lösungen –
               vom ersten Gespräch bis zur Serienproduktion.
             </p>
             <div className="mt-[var(--space-xl)] flex flex-wrap justify-center gap-[var(--space-sm)]">
               <Link
                 href="/kontakt"
-                className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
+                className="inline-flex items-center gap-2 rounded-full bg-red px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:bg-red-dark hover:gap-3"
               >
                 {t("inquiryCta")} <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/kompetenz"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-heading text-[var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-[var(--space-lg)] py-[var(--space-sm)] font-body text-[length:var(--text-base)] font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10"
               >
                 Unsere Kompetenz
               </Link>
